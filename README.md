@@ -1,5 +1,5 @@
 # BIXHUB-IDE
-[![BIXHUB](https://raw.githubusercontent.com/zanardini/BIXHUB-IDE-Logo/master/BIXHUB-Logo.png)](https://www.bixhub.it)
+[![BIXHUB](https://raw.githubusercontent.com/zanardini/BIXHUB-IDE/master/BIXHUB-Logo.png)](https://www.bixhub.it)
 
 # What is BIXHUB?
 BIXHUB - IDE: https://www.BIXHUB.it
