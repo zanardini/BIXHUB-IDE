@@ -1,7 +1,7 @@
 # BIXHUB-IDE
 [![BIXHUB](https://raw.githubusercontent.com/zanardini/BIXHUB-IDE-Logo/master/BIXHUB-Logo.png)](https://www.bixhub.it)
 
-# What is ARXivar?
+# What is BIXHUB?
 BIXHUB - IDE: https://www.BIXHUB.it
 
 # What is this library?
