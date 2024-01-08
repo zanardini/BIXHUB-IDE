@@ -29,40 +29,84 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this._txtClientGuid = new System.Windows.Forms.TextBox();
             this._btnLogin = new System.Windows.Forms.Button();
             this._txtUrl = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this._txtPassword = new System.Windows.Forms.TextBox();
-            this._txtUsername = new System.Windows.Forms.TextBox();
+            this._txtClientSecret = new System.Windows.Forms.TextBox();
+            this._txtClientId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this._txtLog = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this._txtTaxCode = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this._txtExternalID = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this._txtReturnUrl = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this._txtLastName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this._txtFirstName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this._txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this._btnCreaSessione = new System.Windows.Forms.Button();
+            this._txtMail = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this._btnSaveSettings = new System.Windows.Forms.Button();
+            this._btnGetSessionStatus = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this._txtSessionID = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this._txtClientGuid);
             this.groupBox1.Controls.Add(this._btnLogin);
             this.groupBox1.Controls.Add(this._txtUrl);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this._txtPassword);
-            this.groupBox1.Controls.Add(this._txtUsername);
+            this.groupBox1.Controls.Add(this._txtClientSecret);
+            this.groupBox1.Controls.Add(this._txtClientId);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 70);
+            this.groupBox1.Size = new System.Drawing.Size(805, 101);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connessione Web Api";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 46);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Client GUID";
+            // 
+            // _txtClientGuid
+            // 
+            this._txtClientGuid.Location = new System.Drawing.Point(75, 44);
+            this._txtClientGuid.Name = "_txtClientGuid";
+            this._txtClientGuid.Size = new System.Drawing.Size(480, 20);
+            this._txtClientGuid.TabIndex = 11;
+            // 
             // _btnLogin
             // 
-            this._btnLogin.Location = new System.Drawing.Point(575, 36);
+            this._btnLogin.Location = new System.Drawing.Point(574, 65);
             this._btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this._btnLogin.Name = "_btnLogin";
             this._btnLogin.Size = new System.Drawing.Size(112, 25);
@@ -81,35 +125,35 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(322, 42);
+            this.label3.Location = new System.Drawing.Point(264, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Password";
+            this.label3.Text = "Client Secret";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 43);
+            this.label2.Location = new System.Drawing.Point(6, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Username";
+            this.label2.Text = "Client ID";
             // 
-            // _txtPassword
+            // _txtClientSecret
             // 
-            this._txtPassword.Location = new System.Drawing.Point(380, 40);
-            this._txtPassword.Name = "_txtPassword";
-            this._txtPassword.PasswordChar = '*';
-            this._txtPassword.Size = new System.Drawing.Size(174, 20);
-            this._txtPassword.TabIndex = 4;
+            this._txtClientSecret.Location = new System.Drawing.Point(331, 70);
+            this._txtClientSecret.Name = "_txtClientSecret";
+            this._txtClientSecret.PasswordChar = '*';
+            this._txtClientSecret.Size = new System.Drawing.Size(223, 20);
+            this._txtClientSecret.TabIndex = 4;
             // 
-            // _txtUsername
+            // _txtClientId
             // 
-            this._txtUsername.Location = new System.Drawing.Point(75, 41);
-            this._txtUsername.Name = "_txtUsername";
-            this._txtUsername.Size = new System.Drawing.Size(177, 20);
-            this._txtUsername.TabIndex = 3;
+            this._txtClientId.Location = new System.Drawing.Point(74, 70);
+            this._txtClientId.Name = "_txtClientId";
+            this._txtClientId.Size = new System.Drawing.Size(159, 20);
+            this._txtClientId.TabIndex = 3;
             // 
             // label1
             // 
@@ -125,15 +169,18 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this._txtLog);
-            this.groupBox2.Location = new System.Drawing.Point(12, 490);
+            this.groupBox2.Location = new System.Drawing.Point(8, 367);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(776, 100);
+            this.groupBox2.Size = new System.Drawing.Size(809, 193);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Log";
             // 
             // _txtLog
             // 
+            this._txtLog.AcceptsReturn = true;
+            this._txtLog.AcceptsTab = true;
+            this._txtLog.AllowDrop = true;
             this._txtLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this._txtLog.Location = new System.Drawing.Point(3, 16);
             this._txtLog.Margin = new System.Windows.Forms.Padding(2);
@@ -141,16 +188,234 @@
             this._txtLog.Name = "_txtLog";
             this._txtLog.ReadOnly = true;
             this._txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this._txtLog.Size = new System.Drawing.Size(770, 81);
+            this._txtLog.Size = new System.Drawing.Size(803, 174);
             this._txtLog.TabIndex = 7;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this._txtTaxCode);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this._txtExternalID);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this._txtReturnUrl);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this._txtLastName);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this._txtFirstName);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this._txtPhoneNumber);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this._btnCreaSessione);
+            this.groupBox3.Controls.Add(this._txtMail);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Location = new System.Drawing.Point(12, 119);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(805, 157);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Creazione nuova identificazione";
+            // 
+            // _txtTaxCode
+            // 
+            this._txtTaxCode.Location = new System.Drawing.Point(74, 70);
+            this._txtTaxCode.Name = "_txtTaxCode";
+            this._txtTaxCode.Size = new System.Drawing.Size(257, 20);
+            this._txtTaxCode.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "TaxCode";
+            // 
+            // _txtExternalID
+            // 
+            this._txtExternalID.Location = new System.Drawing.Point(539, 95);
+            this._txtExternalID.Name = "_txtExternalID";
+            this._txtExternalID.Size = new System.Drawing.Size(257, 20);
+            this._txtExternalID.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(447, 99);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "ExternalID";
+            // 
+            // _txtReturnUrl
+            // 
+            this._txtReturnUrl.Location = new System.Drawing.Point(75, 96);
+            this._txtReturnUrl.Name = "_txtReturnUrl";
+            this._txtReturnUrl.Size = new System.Drawing.Size(257, 20);
+            this._txtReturnUrl.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 98);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(55, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Return Url";
+            // 
+            // _txtLastName
+            // 
+            this._txtLastName.Location = new System.Drawing.Point(539, 43);
+            this._txtLastName.Name = "_txtLastName";
+            this._txtLastName.Size = new System.Drawing.Size(257, 20);
+            this._txtLastName.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(447, 47);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "LastName";
+            // 
+            // _txtFirstName
+            // 
+            this._txtFirstName.Location = new System.Drawing.Point(75, 44);
+            this._txtFirstName.Name = "_txtFirstName";
+            this._txtFirstName.Size = new System.Drawing.Size(257, 20);
+            this._txtFirstName.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "FirstName";
+            // 
+            // _txtPhoneNumber
+            // 
+            this._txtPhoneNumber.Location = new System.Drawing.Point(539, 17);
+            this._txtPhoneNumber.Name = "_txtPhoneNumber";
+            this._txtPhoneNumber.Size = new System.Drawing.Size(257, 20);
+            this._txtPhoneNumber.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(447, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Phone Number";
+            // 
+            // _btnCreaSessione
+            // 
+            this._btnCreaSessione.Location = new System.Drawing.Point(684, 120);
+            this._btnCreaSessione.Margin = new System.Windows.Forms.Padding(2);
+            this._btnCreaSessione.Name = "_btnCreaSessione";
+            this._btnCreaSessione.Size = new System.Drawing.Size(112, 25);
+            this._btnCreaSessione.TabIndex = 10;
+            this._btnCreaSessione.Text = "Crea";
+            this._btnCreaSessione.UseVisualStyleBackColor = true;
+            this._btnCreaSessione.Click += new System.EventHandler(this._btnCreaSessione_Click);
+            // 
+            // _txtMail
+            // 
+            this._txtMail.Location = new System.Drawing.Point(75, 18);
+            this._txtMail.Name = "_txtMail";
+            this._txtMail.Size = new System.Drawing.Size(257, 20);
+            this._txtMail.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Mail";
+            // 
+            // _btnSaveSettings
+            // 
+            this._btnSaveSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._btnSaveSettings.Location = new System.Drawing.Point(702, 565);
+            this._btnSaveSettings.Margin = new System.Windows.Forms.Padding(2);
+            this._btnSaveSettings.Name = "_btnSaveSettings";
+            this._btnSaveSettings.Size = new System.Drawing.Size(112, 25);
+            this._btnSaveSettings.TabIndex = 11;
+            this._btnSaveSettings.Text = "Salva dati usati";
+            this._btnSaveSettings.UseVisualStyleBackColor = true;
+            this._btnSaveSettings.Click += new System.EventHandler(this._btnSaveSettings_Click);
+            // 
+            // _btnGetSessionStatus
+            // 
+            this._btnGetSessionStatus.Location = new System.Drawing.Point(10, 29);
+            this._btnGetSessionStatus.Margin = new System.Windows.Forms.Padding(2);
+            this._btnGetSessionStatus.Name = "_btnGetSessionStatus";
+            this._btnGetSessionStatus.Size = new System.Drawing.Size(149, 25);
+            this._btnGetSessionStatus.TabIndex = 12;
+            this._btnGetSessionStatus.Text = "Reperimento elenco";
+            this._btnGetSessionStatus.UseVisualStyleBackColor = true;
+            this._btnGetSessionStatus.Click += new System.EventHandler(this._btnGetSessionStatus_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this._txtSessionID);
+            this.groupBox4.Controls.Add(this._btnGetSessionStatus);
+            this.groupBox4.Location = new System.Drawing.Point(12, 283);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(805, 78);
+            this.groupBox4.TabIndex = 13;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Lettura identificazioni";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(254, 34);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Session ID";
+            // 
+            // _txtSessionID
+            // 
+            this._txtSessionID.Location = new System.Drawing.Point(318, 32);
+            this._txtSessionID.Name = "_txtSessionID";
+            this._txtSessionID.Size = new System.Drawing.Size(159, 20);
+            this._txtSessionID.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(482, 29);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(149, 25);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Lettura info sessione";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormIde
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 602);
+            this.ClientSize = new System.Drawing.Size(829, 601);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this._btnSaveSettings);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MinimumSize = new System.Drawing.Size(650, 39);
             this.Name = "FormIde";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ide example";
@@ -158,6 +423,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -169,11 +438,35 @@
         private System.Windows.Forms.TextBox _txtUrl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox _txtPassword;
-        private System.Windows.Forms.TextBox _txtUsername;
+        private System.Windows.Forms.TextBox _txtClientSecret;
+        private System.Windows.Forms.TextBox _txtClientId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox _txtLog;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button _btnCreaSessione;
+        private System.Windows.Forms.TextBox _txtMail;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button _btnSaveSettings;
+        private System.Windows.Forms.TextBox _txtExternalID;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox _txtReturnUrl;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox _txtLastName;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox _txtFirstName;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox _txtPhoneNumber;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox _txtClientGuid;
+        private System.Windows.Forms.TextBox _txtTaxCode;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button _btnGetSessionStatus;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox _txtSessionID;
     }
 }
 
