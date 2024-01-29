@@ -67,7 +67,7 @@ namespace ExampleIDE
                 if (_caller == null)
                     throw new Exception("Fare login");
 
-                CreateSessionResponse createSessionResponse = _caller.CreateNewIdentificationSession(_txtMail.Text, _txtFirstName.Text, _txtLastName.Text, _txtTaxCode.Text, _txtPhoneNumber.Text, _txtReturnUrl.Text, _txtExternalID.Text);
+                CreateSessionResponse createSessionResponse = _caller.CreateNewIdentificationSession(_txtMail.Text, _txtFirstName.Text, _txtLastName.Text, _txtTaxCode.Text, _txtPhoneNumber.Text, _txtReturnUrl.Text, _txtExternalID.Text, _cbSendMail.Checked);
                 AddLogInfo("Sessione creata con successo: " + createSessionResponse.SessionUrl);
             }
             catch (Exception ex)

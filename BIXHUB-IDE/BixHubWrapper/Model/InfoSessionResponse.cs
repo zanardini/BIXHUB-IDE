@@ -19,7 +19,8 @@ namespace BixHubWrapper.Model
         public string FlowType { get; set; }
         public string IdentificationStatus { get; set; }
         public string SessionStatus { get; set; }
-
+        public float? RiskScore { get; set; }
+        public string RiskScoreEvaluation { get; set; }
 
         public override string ToString()
         {
@@ -27,7 +28,7 @@ namespace BixHubWrapper.Model
             result += string.Format("  SessionGuid: {0}", SessionGuid);
             result += Environment.NewLine;
             result += string.Format("  ExternalID: {0}", ExternalID);
-            result += Environment.NewLine; 
+            result += Environment.NewLine;
             result += string.Format("  CreatedDate: {0}", CreatedDate);
             result += Environment.NewLine;
             result += string.Format("  UpdatedDate: {0}", UpdatedDate);
@@ -39,6 +40,10 @@ namespace BixHubWrapper.Model
             result += string.Format("  IdentificationStatus: {0}", IdentificationStatus);
             result += Environment.NewLine;
             result += string.Format("  SessionStatus: {0}", SessionStatus);
+            result += Environment.NewLine;
+            result += string.Format("  RiskScore: {0}", RiskScore == null ? "null" : RiskScore.ToString());
+            result += Environment.NewLine;
+            result += string.Format("  RiskScoreEvaluation: {0}", RiskScoreEvaluation);
             return result;
         }
     }

@@ -57,7 +57,7 @@ namespace BixHubWrapper
             _accessToken = accessTokenDto.access_token;
         }
 
-        public BixHubWrapper.Model.CreateSessionResponse CreateNewIdentificationSession(string email, string firstName, string lastName, string taxCode, string phoneNumber, string returnUrl, string externalID)
+        public BixHubWrapper.Model.CreateSessionResponse CreateNewIdentificationSession(string email, string firstName, string lastName, string taxCode, string phoneNumber, string returnUrl, string externalID, bool sendMail)
         {
             /*
                 "attributes": { 
@@ -85,6 +85,9 @@ namespace BixHubWrapper
             IO.Swagger.Api.SessionLifeCycleApi sessionLifeCycleApi = new IO.Swagger.Api.SessionLifeCycleApi(Configuration);
             IO.Swagger.Model.CreateSessionRequest body = new IO.Swagger.Model.CreateSessionRequest(parameters, metadata, attributes, taxCode, personalData, IO.Swagger.Model.SessionFlowType.Dynamic);
             var response = sessionLifeCycleApi.ApiV1SessionLifeCycleCreatePost(body);
+            if (sendMail)
+                sessionLifeCycleApi.ApiV1SessionLifeCycleSendEmailSessionGuidPost(response.SessionGuid, "CODE01");
+
             return new BixHubWrapper.Model.CreateSessionResponse
             {
                 SessionGuid = response.SessionGuid,
@@ -148,6 +151,9 @@ namespace BixHubWrapper
                 result.SessionStatus = statusModel.SessionStatus.ToString();
                 result.IdentificationStatus = statusModel.IdentificationStatus.ToString();
                 result.CompletedDate = statusModel.CompletedDate;
+                result.RiskScore = statusModel.RiskScore;
+                result.RiskScoreEvaluation = statusModel.RiskScoreEvaluation;             
+
             }
             return result;
         }
