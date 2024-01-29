@@ -186,50 +186,52 @@ namespace ExampleIDE
                     return;
                 }
 
-                var folderBrowserDialog1 = new FolderBrowserDialog();
-
-                // Show the FolderBrowserDialog.
-                DialogResult result = folderBrowserDialog1.ShowDialog();
-                if (result == DialogResult.OK)
+                using (var folderBrowserDialog1 = new FolderBrowserDialog())
                 {
-                    string folderName = folderBrowserDialog1.SelectedPath;
-
-                    var tmp = _caller.GetIdentificationEvidenceBySessionGuid(sessionId);
-                    string fullname = Directory.CreateDirectory(Path.Combine(folderName, sessionId.ToString())).FullName;
 
 
-                    // Se AI
-                    if (tmp.IDCard.FrontFileData != null)
+                    DialogResult result = folderBrowserDialog1.ShowDialog();
+                    if (result == DialogResult.OK)
                     {
-                        File.WriteAllBytes(Path.Combine(fullname, "IDCard_Front.jpeg"), tmp.IDCard.FrontFileData);
-                    }
-                    if (tmp.IDCard.RearFileData != null)
-                    {
-                        File.WriteAllBytes(Path.Combine(fullname, "IDCard_Rear.jpeg"), tmp.IDCard.RearFileData);
-                    }
-                    if (tmp.Selfie.FileData != null)
-                    {
-                        File.WriteAllBytes(Path.Combine(fullname, "Selfie.jpeg"), tmp.Selfie.FileData);
-                    }
-                    if (tmp.LivenessDetection.FileData != null)
-                    {
-                        File.WriteAllBytes(Path.Combine(fullname, "Liveness.mp4"), tmp.LivenessDetection.FileData);
-                    }
+                        string folderName = folderBrowserDialog1.SelectedPath;
 
-                    // Se SPID/CIE
-                    if (tmp.DigitalIdentity != null)
-                    {
-                        File.WriteAllText(Path.Combine(fullname, "Request.xml"), tmp.DigitalIdentity.Request);
-                    }
-                    if (tmp.DigitalIdentity != null)
-                    {
-                        File.WriteAllText(Path.Combine(fullname, "Response.xml"), tmp.DigitalIdentity.Response);
-                    }
+                        var acquiredIDInfoResponse = _caller.GetIdentificationEvidenceBySessionGuid(sessionId);
+                        string fullname = Directory.CreateDirectory(Path.Combine(folderName, sessionId.ToString())).FullName;
 
-                    var auditLog = _caller.GetAuditLogBySessionGuid(sessionId);
-                    File.WriteAllBytes(Path.Combine(fullname, "auditLog.pdf"), auditLog);
+                        // Se AI
+                        if (acquiredIDInfoResponse.IDCard.FrontFileData != null)
+                        {
+                            File.WriteAllBytes(Path.Combine(fullname, "IDCard_Front.jpeg"), acquiredIDInfoResponse.IDCard.FrontFileData);
+                        }
+                        if (acquiredIDInfoResponse.IDCard.RearFileData != null)
+                        {
+                            File.WriteAllBytes(Path.Combine(fullname, "IDCard_Rear.jpeg"), acquiredIDInfoResponse.IDCard.RearFileData);
+                        }
+                        if (acquiredIDInfoResponse.Selfie.FileData != null)
+                        {
+                            File.WriteAllBytes(Path.Combine(fullname, "Selfie.jpeg"), acquiredIDInfoResponse.Selfie.FileData);
+                        }
+                        if (acquiredIDInfoResponse.LivenessDetection.FileData != null)
+                        {
+                            File.WriteAllBytes(Path.Combine(fullname, "Liveness.mp4"), acquiredIDInfoResponse.LivenessDetection.FileData);
+                        }
 
-                    AddLogInfo("Download evidenze identificazione eseguito sul path: " + fullname);
+                        // Se SPID/CIE
+                        if (acquiredIDInfoResponse.DigitalIdentity != null)
+                        {
+                            File.WriteAllText(Path.Combine(fullname, "Request.xml"), acquiredIDInfoResponse.DigitalIdentity.Request);
+                        }
+                        if (acquiredIDInfoResponse.DigitalIdentity != null)
+                        {
+                            File.WriteAllText(Path.Combine(fullname, "Response.xml"), acquiredIDInfoResponse.DigitalIdentity.Response);
+                        }
+
+                        var auditLog = _caller.GetAuditLogBySessionGuid(sessionId);
+                        File.WriteAllBytes(Path.Combine(fullname, "auditLog.pdf"), auditLog);
+
+                        AddLogInfo("Download evidenze identificazione eseguito sul path: " + fullname);
+                        System.Diagnostics.Process.Start("explorer.exe", fullname);
+                    }
                 }
             }
             catch (Exception ex)
