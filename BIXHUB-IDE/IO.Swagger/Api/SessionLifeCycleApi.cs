@@ -117,8 +117,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <returns>GetAllSessionResponse</returns>
-        GetAllSessionResponse ApiV1SessionLifeCycleGetAuditLogSessionGuidGet (Guid? sessionGuid);
+        /// <returns>byte[]</returns>
+        byte[] ApiV1SessionLifeCycleGetAuditLogSessionGuidGet (Guid? sessionGuid);
 
         /// <summary>
         /// Returns Audit Logs of an identification session
@@ -128,8 +128,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <returns>ApiResponse of GetAllSessionResponse</returns>
-        ApiResponse<GetAllSessionResponse> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetWithHttpInfo (Guid? sessionGuid);
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetWithHttpInfo (Guid? sessionGuid);
         /// <summary>
         /// Returns info of an identification sessione
         /// </summary>
@@ -314,8 +314,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <returns>Task of GetAllSessionResponse</returns>
-        System.Threading.Tasks.Task<GetAllSessionResponse> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsync (Guid? sessionGuid);
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsync (Guid? sessionGuid);
 
         /// <summary>
         /// Returns Audit Logs of an identification session
@@ -325,8 +325,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <returns>Task of ApiResponse (GetAllSessionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAllSessionResponse>> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid);
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid);
         /// <summary>
         /// Returns info of an identification sessione
         /// </summary>
@@ -1143,10 +1143,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <returns>GetAllSessionResponse</returns>
-        public GetAllSessionResponse ApiV1SessionLifeCycleGetAuditLogSessionGuidGet (Guid? sessionGuid)
+        /// <returns>byte[]</returns>
+        public byte[] ApiV1SessionLifeCycleGetAuditLogSessionGuidGet (Guid? sessionGuid)
         {
-             ApiResponse<GetAllSessionResponse> localVarResponse = ApiV1SessionLifeCycleGetAuditLogSessionGuidGetWithHttpInfo(sessionGuid);
+             ApiResponse<byte[]> localVarResponse = ApiV1SessionLifeCycleGetAuditLogSessionGuidGetWithHttpInfo(sessionGuid);
              return localVarResponse.Data;
         }
 
@@ -1155,8 +1155,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <returns>ApiResponse of GetAllSessionResponse</returns>
-        public ApiResponse< GetAllSessionResponse > ApiV1SessionLifeCycleGetAuditLogSessionGuidGetWithHttpInfo (Guid? sessionGuid)
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > ApiV1SessionLifeCycleGetAuditLogSessionGuidGetWithHttpInfo (Guid? sessionGuid)
         {
             // verify the required parameter 'sessionGuid' is set
             if (sessionGuid == null)
@@ -1204,9 +1204,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<GetAllSessionResponse>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (GetAllSessionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAllSessionResponse)));
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
         /// <summary>
@@ -1214,10 +1214,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <returns>Task of GetAllSessionResponse</returns>
-        public async System.Threading.Tasks.Task<GetAllSessionResponse> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsync (Guid? sessionGuid)
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsync (Guid? sessionGuid)
         {
-             ApiResponse<GetAllSessionResponse> localVarResponse = await ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsyncWithHttpInfo(sessionGuid);
+             ApiResponse<byte[]> localVarResponse = await ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsyncWithHttpInfo(sessionGuid);
              return localVarResponse.Data;
 
         }
@@ -1227,8 +1227,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <returns>Task of ApiResponse (GetAllSessionResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GetAllSessionResponse>> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid)
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid)
         {
             // verify the required parameter 'sessionGuid' is set
             if (sessionGuid == null)
@@ -1276,9 +1276,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<GetAllSessionResponse>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (GetAllSessionResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAllSessionResponse)));
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
         /// <summary>

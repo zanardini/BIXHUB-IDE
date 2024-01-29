@@ -106,6 +106,22 @@ namespace BixHubWrapper
             IO.Swagger.Model.GetStatusSessionResponse statusModel = statusModelList.FirstOrDefault();
             var result = InfoSessionResponseTranslate(sessionModel, statusModel);
             return result;
+
+        }
+
+        public List<BixHubWrapper.Model.InfoSessionResponse> GetSessionList()
+        {
+            IO.Swagger.Api.SessionLifeCycleApi sessionLifeCycleApi = new IO.Swagger.Api.SessionLifeCycleApi(Configuration);
+            IO.Swagger.Model.GetAllSessionRequest request = new IO.Swagger.Model.GetAllSessionRequest(0, 100);
+            var sessionResponse = sessionLifeCycleApi.ApiV1SessionLifeCycleGetAllPost(request);
+            var result = new List<BixHubWrapper.Model.InfoSessionResponse>();
+            if (sessionResponse == null)
+                return result;
+            if (sessionResponse.Sessions == null)
+                return result;
+            foreach (IO.Swagger.Model.GetSessionResponse session in sessionResponse.Sessions)
+                result.Add(InfoSessionResponseTranslate(session, null));
+            return result;
         }
 
         private BixHubWrapper.Model.InfoSessionResponse InfoSessionResponseTranslate(IO.Swagger.Model.GetSessionResponse sessionModel, IO.Swagger.Model.GetStatusSessionResponse statusModel)
@@ -136,21 +152,30 @@ namespace BixHubWrapper
             return result;
         }
 
-        public List<BixHubWrapper.Model.InfoSessionResponse> GetSessionList()
+        public BixHubWrapper.Model.AcquiredIDInfoResponse GetIdentificationEvidenceBySessionGuid(Guid sessionGuid)
         {
             IO.Swagger.Api.SessionLifeCycleApi sessionLifeCycleApi = new IO.Swagger.Api.SessionLifeCycleApi(Configuration);
-            IO.Swagger.Model.GetAllSessionRequest request = new IO.Swagger.Model.GetAllSessionRequest(0, 100);
-            var sessionResponse = sessionLifeCycleApi.ApiV1SessionLifeCycleGetAllPost(request);
-            var result = new List<BixHubWrapper.Model.InfoSessionResponse>();
-            if (sessionResponse == null)
-                return result;
-            if (sessionResponse.Sessions == null)
-                return result;
-            foreach (IO.Swagger.Model.GetSessionResponse session in sessionResponse.Sessions)
-                result.Add(InfoSessionResponseTranslate(session, null));
-            return result;
+            var allEvidenceResponse = sessionLifeCycleApi.ApiV1SessionLifeCycleGetAcquiredIDInfoSessionGuidPost(sessionGuid, new GetAcquiredIDInfoRequest()
+            {
+                WithDigitalIdentityReqResp = true,
+                WithIDCard = true,
+                WithLivenessDetection = true,
+                WithPersonalData = true,
+                WithSelfie = true
+            });
 
+            BixHubWrapper.Model.AcquiredIDInfoResponse responseWrapper = JsonConvert.DeserializeObject<BixHubWrapper.Model.AcquiredIDInfoResponse>(JsonConvert.SerializeObject(allEvidenceResponse));
+
+            return responseWrapper;
 
         }
+
+        public byte[] GetAuditLogBySessionGuid(Guid sessionGuid)
+        {
+            IO.Swagger.Api.SessionLifeCycleApi sessionLifeCycleApi = new IO.Swagger.Api.SessionLifeCycleApi(Configuration);
+            var response = sessionLifeCycleApi.ApiV1SessionLifeCycleGetAuditLogSessionGuidGet(sessionGuid);
+            return response;
+        }
+
     }
 }

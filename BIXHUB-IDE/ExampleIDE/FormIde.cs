@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using static System.Collections.Specialized.BitVector32;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ExampleIDE
 {
@@ -48,7 +49,7 @@ namespace ExampleIDE
             try
             {
                 _caller = new BixHubWrapper.IdeCaller(_txtUrl.Text);
-                
+
                 _caller.Login(_txtClientGuid.Text, _txtClientId.Text, _txtClientSecret.Text);
                 AddLogInfo("Login avvenuta con successo: " + _caller.AccessToken);
 
@@ -167,6 +168,75 @@ namespace ExampleIDE
             {
                 AddLogError(ex.ToString());
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_caller == null)
+                    throw new Exception("Fare login");
+
+                var sessionId = Guid.Parse(_txtSessionID.Text);
+
+                var session = _caller.GetSession(sessionId);
+                if (session.SessionStatus != "Completed")
+                {
+                    AddLogInfo("Sessione di identificazione non ancora completata");
+                    return;
+                }
+
+                var folderBrowserDialog1 = new FolderBrowserDialog();
+
+                // Show the FolderBrowserDialog.
+                DialogResult result = folderBrowserDialog1.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string folderName = folderBrowserDialog1.SelectedPath;
+
+                    var tmp = _caller.GetIdentificationEvidenceBySessionGuid(sessionId);
+                    string fullname = Directory.CreateDirectory(Path.Combine(folderName, sessionId.ToString())).FullName;
+
+
+                    // Se AI
+                    if (tmp.IDCard.FrontFileData != null)
+                    {
+                        File.WriteAllBytes(Path.Combine(fullname, "IDCard_Front.jpeg"), tmp.IDCard.FrontFileData);
+                    }
+                    if (tmp.IDCard.RearFileData != null)
+                    {
+                        File.WriteAllBytes(Path.Combine(fullname, "IDCard_Rear.jpeg"), tmp.IDCard.RearFileData);
+                    }
+                    if (tmp.Selfie.FileData != null)
+                    {
+                        File.WriteAllBytes(Path.Combine(fullname, "Selfie.jpeg"), tmp.Selfie.FileData);
+                    }
+                    if (tmp.LivenessDetection.FileData != null)
+                    {
+                        File.WriteAllBytes(Path.Combine(fullname, "Liveness.mp4"), tmp.LivenessDetection.FileData);
+                    }
+
+                    // Se SPID/CIE
+                    if (tmp.DigitalIdentity != null)
+                    {
+                        File.WriteAllText(Path.Combine(fullname, "Request.xml"), tmp.DigitalIdentity.Request);
+                    }
+                    if (tmp.DigitalIdentity != null)
+                    {
+                        File.WriteAllText(Path.Combine(fullname, "Response.xml"), tmp.DigitalIdentity.Response);
+                    }
+
+                    var auditLog = _caller.GetAuditLogBySessionGuid(sessionId);
+                    File.WriteAllBytes(Path.Combine(fullname, "auditLog.pdf"), auditLog);
+
+                    AddLogInfo("Download evidenze identificazione eseguito sul path: " + fullname);
+                }
+            }
+            catch (Exception ex)
+            {
+                AddLogError(ex.Message);
+            }
+
         }
     }
 

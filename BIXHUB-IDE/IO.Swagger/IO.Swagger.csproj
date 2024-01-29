@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 OnBoarding
 
@@ -9,7 +9,6 @@ OpenAPI spec version: v1
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{332DFA6A-1060-44D0-97A5-0524A2BBAC96}</ProjectGuid>
@@ -60,19 +59,51 @@ OpenAPI spec version: v1
       <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\JsonSubTypes.1.2.0\lib\net45\JsonSubTypes.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
-        <HintPath Condition="Exists('$(SolutionDir)\packages')">$(SolutionDir)\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
-        <HintPath Condition="Exists('..\packages')">..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
-        <HintPath Condition="Exists('..\..\packages')">..\..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
+      <HintPath Condition="Exists('$(SolutionDir)\packages')">$(SolutionDir)\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
+      <HintPath Condition="Exists('..\packages')">..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
+      <HintPath Condition="Exists('..\..\packages')">..\..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
       <HintPath Condition="Exists('..\..\vendor')">..\..\vendor\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs"
-             Exclude="obj\**" />
+    <Compile Include="Api\MonitoringApi.cs" />
+    <Compile Include="Api\SessionLifeCycleApi.cs" />
+    <Compile Include="Client\ApiClient.cs" />
+    <Compile Include="Client\ApiException.cs" />
+    <Compile Include="Client\ApiResponse.cs" />
+    <Compile Include="Client\Configuration.cs" />
+    <Compile Include="Client\ExceptionFactory.cs" />
+    <Compile Include="Client\GlobalConfiguration.cs" />
+    <Compile Include="Client\IApiAccessor.cs" />
+    <Compile Include="Client\IReadableConfiguration.cs" />
+    <Compile Include="Client\SwaggerDateConverter.cs" />
+    <Compile Include="Model\ConfigurationToExpose.cs" />
+    <Compile Include="Model\CreateSessionRequest.cs" />
+    <Compile Include="Model\CreateSessionResponse.cs" />
+    <Compile Include="Model\DigitalIdentityResponse.cs" />
+    <Compile Include="Model\DocumentType.cs" />
+    <Compile Include="Model\ExceptionCodeEnum.cs" />
+    <Compile Include="Model\ExceptionResult.cs" />
+    <Compile Include="Model\FlowStep.cs" />
+    <Compile Include="Model\GetAcquiredIDInfoRequest.cs" />
+    <Compile Include="Model\GetAcquiredIDInfoResponse.cs" />
+    <Compile Include="Model\GetAllSessionRequest.cs" />
+    <Compile Include="Model\GetAllSessionResponse.cs" />
+    <Compile Include="Model\GetSessionResponse.cs" />
+    <Compile Include="Model\GetStatusSessionResponse.cs" />
+    <Compile Include="Model\IDCardAcquiredResponse.cs" />
+    <Compile Include="Model\IdentificationStatus.cs" />
+    <Compile Include="Model\PersonalDataAcquiredInfoResponse.cs" />
+    <Compile Include="Model\PrimaryPersonalData.cs" />
+    <Compile Include="Model\ResourceResponse.cs" />
+    <Compile Include="Model\SessionFlowType.cs" />
+    <Compile Include="Model\SessionStatus.cs" />
+    <Compile Include="Model\Sex.cs" />
+    <Compile Include="Model\UpdateSessionRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-      <None Include="packages.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
-

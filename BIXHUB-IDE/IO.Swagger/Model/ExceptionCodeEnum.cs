@@ -164,8 +164,18 @@ namespace IO.Swagger.Model
         [EnumMember(Value = "E026")]
         E026 = 27,
         /// <summary>
+        /// Enum E027 for value: E027
+        /// </summary>
+        [EnumMember(Value = "E027")]
+        E027 = 28,
+        /// <summary>
+        /// Enum E028 for value: E028
+        /// </summary>
+        [EnumMember(Value = "E028")]
+        E028 = 29,
+        /// <summary>
         /// Enum E999 for value: E999
         /// </summary>
         [EnumMember(Value = "E999")]
-        E999 = 28    }
+        E999 = 30    }
 }

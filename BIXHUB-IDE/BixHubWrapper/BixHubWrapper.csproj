@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdeCaller.cs" />
+    <Compile Include="Model\AcquiredIDInfoResponse.cs" />
     <Compile Include="Model\CreateSessionRequest.cs" />
     <Compile Include="Model\CreateSessionResponse.cs" />
     <Compile Include="Model\InfoSessionResponse.cs" />
