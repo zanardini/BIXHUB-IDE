@@ -86,7 +86,7 @@ namespace BixHubWrapper
             IO.Swagger.Model.CreateSessionRequest body = new IO.Swagger.Model.CreateSessionRequest(parameters, metadata, attributes, taxCode, personalData, IO.Swagger.Model.SessionFlowType.Dynamic);
             var response = sessionLifeCycleApi.ApiV1SessionLifeCycleCreatePost(body);
             if (sendMail)
-                sessionLifeCycleApi.ApiV1SessionLifeCycleSendEmailSessionGuidPost(response.SessionGuid, "CODE01");
+                sessionLifeCycleApi.ApiV1SessionLifeCycleSendEmailSessionGuidPost(response.SessionGuid, new SendEmailRequest());
 
             return new BixHubWrapper.Model.CreateSessionResponse
             {

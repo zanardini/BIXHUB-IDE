@@ -180,9 +180,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <param name="templateId"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <returns></returns>
-        void ApiV1SessionLifeCycleSendEmailSessionGuidPost (Guid? sessionGuid, string templateId = null);
+        void ApiV1SessionLifeCycleSendEmailSessionGuidPost (Guid? sessionGuid, SendEmailRequest body = null);
 
         /// <summary>
         /// Send an email with the link to activate the identification session
@@ -192,9 +192,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <param name="templateId"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV1SessionLifeCycleSendEmailSessionGuidPostWithHttpInfo (Guid? sessionGuid, string templateId = null);
+        ApiResponse<Object> ApiV1SessionLifeCycleSendEmailSessionGuidPostWithHttpInfo (Guid? sessionGuid, SendEmailRequest body = null);
         /// <summary>
         /// Update attributes, parameters or metadata of an identification session
         /// </summary>
@@ -377,9 +377,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <param name="templateId"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV1SessionLifeCycleSendEmailSessionGuidPostAsync (Guid? sessionGuid, string templateId = null);
+        System.Threading.Tasks.Task ApiV1SessionLifeCycleSendEmailSessionGuidPostAsync (Guid? sessionGuid, SendEmailRequest body = null);
 
         /// <summary>
         /// Send an email with the link to activate the identification session
@@ -389,9 +389,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <param name="templateId"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV1SessionLifeCycleSendEmailSessionGuidPostAsyncWithHttpInfo (Guid? sessionGuid, string templateId = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV1SessionLifeCycleSendEmailSessionGuidPostAsyncWithHttpInfo (Guid? sessionGuid, SendEmailRequest body = null);
         /// <summary>
         /// Update attributes, parameters or metadata of an identification session
         /// </summary>
@@ -1582,11 +1582,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <param name="templateId"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <returns></returns>
-        public void ApiV1SessionLifeCycleSendEmailSessionGuidPost (Guid? sessionGuid, string templateId = null)
+        public void ApiV1SessionLifeCycleSendEmailSessionGuidPost (Guid? sessionGuid, SendEmailRequest body = null)
         {
-             ApiV1SessionLifeCycleSendEmailSessionGuidPostWithHttpInfo(sessionGuid, templateId);
+             ApiV1SessionLifeCycleSendEmailSessionGuidPostWithHttpInfo(sessionGuid, body);
         }
 
         /// <summary>
@@ -1594,9 +1594,9 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <param name="templateId"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ApiV1SessionLifeCycleSendEmailSessionGuidPostWithHttpInfo (Guid? sessionGuid, string templateId = null)
+        public ApiResponse<Object> ApiV1SessionLifeCycleSendEmailSessionGuidPostWithHttpInfo (Guid? sessionGuid, SendEmailRequest body = null)
         {
             // verify the required parameter 'sessionGuid' is set
             if (sessionGuid == null)
@@ -1612,6 +1612,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1624,7 +1625,14 @@ namespace IO.Swagger.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
-            if (templateId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "templateId", templateId)); // query parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
             // authentication (Bearer) required
             // bearer required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -1655,11 +1663,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <param name="templateId"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV1SessionLifeCycleSendEmailSessionGuidPostAsync (Guid? sessionGuid, string templateId = null)
+        public async System.Threading.Tasks.Task ApiV1SessionLifeCycleSendEmailSessionGuidPostAsync (Guid? sessionGuid, SendEmailRequest body = null)
         {
-             await ApiV1SessionLifeCycleSendEmailSessionGuidPostAsyncWithHttpInfo(sessionGuid, templateId);
+             await ApiV1SessionLifeCycleSendEmailSessionGuidPostAsyncWithHttpInfo(sessionGuid, body);
 
         }
 
@@ -1668,9 +1676,9 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
-        /// <param name="templateId"> (optional)</param>
+        /// <param name="body"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiV1SessionLifeCycleSendEmailSessionGuidPostAsyncWithHttpInfo (Guid? sessionGuid, string templateId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ApiV1SessionLifeCycleSendEmailSessionGuidPostAsyncWithHttpInfo (Guid? sessionGuid, SendEmailRequest body = null)
         {
             // verify the required parameter 'sessionGuid' is set
             if (sessionGuid == null)
@@ -1686,6 +1694,7 @@ namespace IO.Swagger.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1698,7 +1707,14 @@ namespace IO.Swagger.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
-            if (templateId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "templateId", templateId)); // query parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
             // authentication (Bearer) required
             // bearer required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))

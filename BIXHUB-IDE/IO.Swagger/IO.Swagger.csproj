@@ -96,6 +96,7 @@ OpenAPI spec version: v1
     <Compile Include="Model\PersonalDataAcquiredInfoResponse.cs" />
     <Compile Include="Model\PrimaryPersonalData.cs" />
     <Compile Include="Model\ResourceResponse.cs" />
+    <Compile Include="Model\SendEmailRequest.cs" />
     <Compile Include="Model\SessionFlowType.cs" />
     <Compile Include="Model\SessionStatus.cs" />
     <Compile Include="Model\Sex.cs" />
