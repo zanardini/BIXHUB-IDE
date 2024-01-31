@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -140,6 +141,8 @@ namespace ExampleIDE
                     AddLogInfo(sessions[i].ToString());
                 }
 
+                LoadData(sessions);
+
                 AddLogInfo("GetSessionList eseguita con successo: ");
             }
             catch (Exception ex)
@@ -238,7 +241,26 @@ namespace ExampleIDE
             {
                 AddLogError(ex.Message);
             }
+        }
 
+        private void LoadData(List<BixHubWrapper.Model.InfoSessionResponse> sessions)
+        {
+            sessionData.DataSource = null;
+            sessionData.Columns.Clear();
+            sessionData.DataSource = sessions;
+            sessionData.Columns.Add(new DataGridViewButtonColumn() { Text = "Apri sessione", UseColumnTextForButtonValue = true });
+        }
+
+        private void sessionData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                var value = senderGrid.Rows[e.RowIndex].Cells["SessionGuid"].Value.ToString();
+                var url = "https://idedemo.bixhub.it/OnBoarding.FE/start/" + value; //DEMO
+                System.Diagnostics.Process.Start(url);
+            }
         }
     }
 
