@@ -390,10 +390,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(635, 32);
+            this.button2.Location = new System.Drawing.Point(635, 29);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 25);
+            this.button2.Size = new System.Drawing.Size(161, 25);
             this.button2.TabIndex = 16;
             this.button2.Text = "Download file sessione";
             this.button2.UseVisualStyleBackColor = true;
