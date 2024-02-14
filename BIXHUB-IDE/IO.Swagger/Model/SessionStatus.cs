@@ -67,5 +67,10 @@ namespace IO.Swagger.Model
         /// Enum FailedTooManyAttempts for value: FailedTooManyAttempts
         /// </summary>
         [EnumMember(Value = "FailedTooManyAttempts")]
-        FailedTooManyAttempts = 8    }
+        FailedTooManyAttempts = 8,
+        /// <summary>
+        /// Enum FailedSpidCie for value: FailedSpidCie
+        /// </summary>
+        [EnumMember(Value = "FailedSpidCie")]
+        FailedSpidCie = 9    }
 }

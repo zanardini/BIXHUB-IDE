@@ -23,10 +23,10 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// Defines SessionFlowType
+    /// Defines SessionFlowTypeDto
     /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
-        public enum SessionFlowType
+        public enum SessionFlowTypeDto
     {
         /// <summary>
         /// Enum Dynamic for value: Dynamic
@@ -47,10 +47,5 @@ namespace IO.Swagger.Model
         /// Enum Cie for value: Cie
         /// </summary>
         [EnumMember(Value = "Cie")]
-        Cie = 4,
-        /// <summary>
-        /// Enum AiNoVideo for value: AiNoVideo
-        /// </summary>
-        [EnumMember(Value = "AiNoVideo")]
-        AiNoVideo = 5    }
+        Cie = 4    }
 }

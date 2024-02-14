@@ -83,7 +83,7 @@ namespace BixHubWrapper
             var metadata = new Dictionary<string, string> { { "externalID", externalID } };
 
             IO.Swagger.Api.SessionLifeCycleApi sessionLifeCycleApi = new IO.Swagger.Api.SessionLifeCycleApi(Configuration);
-            IO.Swagger.Model.CreateSessionRequest body = new IO.Swagger.Model.CreateSessionRequest(parameters, metadata, attributes, taxCode, personalData, IO.Swagger.Model.SessionFlowType.Dynamic);
+            IO.Swagger.Model.CreateSessionRequest body = new IO.Swagger.Model.CreateSessionRequest(parameters, metadata, attributes, taxCode, personalData, IO.Swagger.Model.SessionFlowTypeDto.Ai);
             var response = sessionLifeCycleApi.ApiV1SessionLifeCycleCreatePost(body);
             if (sendMail)
                 sessionLifeCycleApi.ApiV1SessionLifeCycleSendEmailSessionGuidPost(response.SessionGuid, new SendEmailRequest());

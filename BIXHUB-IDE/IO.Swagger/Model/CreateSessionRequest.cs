@@ -37,7 +37,7 @@ namespace IO.Swagger.Model
         /// <param name="taxCode">taxCode.</param>
         /// <param name="personalData">personalData.</param>
         /// <param name="flowType">flowType.</param>
-        public CreateSessionRequest(Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> metadata = default(Dictionary<string, string>), Dictionary<string, string> attributes = default(Dictionary<string, string>), string taxCode = default(string), PrimaryPersonalData personalData = default(PrimaryPersonalData), SessionFlowType flowType = default(SessionFlowType))
+        public CreateSessionRequest(Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> metadata = default(Dictionary<string, string>), Dictionary<string, string> attributes = default(Dictionary<string, string>), string taxCode = default(string), PrimaryPersonalData personalData = default(PrimaryPersonalData), SessionFlowTypeDto flowType = default(SessionFlowTypeDto))
         {
             this.Parameters = parameters;
             this.Metadata = metadata;
@@ -81,7 +81,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets FlowType
         /// </summary>
         [DataMember(Name="flowType", EmitDefaultValue=false)]
-        public SessionFlowType FlowType { get; set; }
+        public SessionFlowTypeDto FlowType { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
