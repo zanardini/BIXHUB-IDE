@@ -23,33 +23,33 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// ConfigurationToExpose
+    /// GetAcquiredUserInfo
     /// </summary>
     [DataContract]
-        public partial class ConfigurationToExpose :  IEquatable<ConfigurationToExpose>, IValidatableObject
+        public partial class GetAcquiredUserInfo :  IEquatable<GetAcquiredUserInfo>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigurationToExpose" /> class.
+        /// Initializes a new instance of the <see cref="GetAcquiredUserInfo" /> class.
         /// </summary>
-        /// <param name="riskMediumTreshold">riskMediumTreshold.</param>
-        /// <param name="riskHighTreshold">riskHighTreshold.</param>
-        public ConfigurationToExpose(int? riskMediumTreshold = default(int?), int? riskHighTreshold = default(int?))
+        /// <param name="personalData">personalData.</param>
+        /// <param name="idCard">idCard.</param>
+        public GetAcquiredUserInfo(PersonalDataAcquiredUserInfoResponse personalData = default(PersonalDataAcquiredUserInfoResponse), IDCardAcquiredUserResponse idCard = default(IDCardAcquiredUserResponse))
         {
-            this.RiskMediumTreshold = riskMediumTreshold;
-            this.RiskHighTreshold = riskHighTreshold;
+            this.PersonalData = personalData;
+            this.IdCard = idCard;
         }
         
         /// <summary>
-        /// Gets or Sets RiskMediumTreshold
+        /// Gets or Sets PersonalData
         /// </summary>
-        [DataMember(Name="risk_MediumTreshold", EmitDefaultValue=false)]
-        public int? RiskMediumTreshold { get; set; }
+        [DataMember(Name="personalData", EmitDefaultValue=false)]
+        public PersonalDataAcquiredUserInfoResponse PersonalData { get; set; }
 
         /// <summary>
-        /// Gets or Sets RiskHighTreshold
+        /// Gets or Sets IdCard
         /// </summary>
-        [DataMember(Name="risk_HighTreshold", EmitDefaultValue=false)]
-        public int? RiskHighTreshold { get; set; }
+        [DataMember(Name="idCard", EmitDefaultValue=false)]
+        public IDCardAcquiredUserResponse IdCard { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -58,9 +58,9 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ConfigurationToExpose {\n");
-            sb.Append("  RiskMediumTreshold: ").Append(RiskMediumTreshold).Append("\n");
-            sb.Append("  RiskHighTreshold: ").Append(RiskHighTreshold).Append("\n");
+            sb.Append("class GetAcquiredUserInfo {\n");
+            sb.Append("  PersonalData: ").Append(PersonalData).Append("\n");
+            sb.Append("  IdCard: ").Append(IdCard).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,29 +81,29 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ConfigurationToExpose);
+            return this.Equals(input as GetAcquiredUserInfo);
         }
 
         /// <summary>
-        /// Returns true if ConfigurationToExpose instances are equal
+        /// Returns true if GetAcquiredUserInfo instances are equal
         /// </summary>
-        /// <param name="input">Instance of ConfigurationToExpose to be compared</param>
+        /// <param name="input">Instance of GetAcquiredUserInfo to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ConfigurationToExpose input)
+        public bool Equals(GetAcquiredUserInfo input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.RiskMediumTreshold == input.RiskMediumTreshold ||
-                    (this.RiskMediumTreshold != null &&
-                    this.RiskMediumTreshold.Equals(input.RiskMediumTreshold))
+                    this.PersonalData == input.PersonalData ||
+                    (this.PersonalData != null &&
+                    this.PersonalData.Equals(input.PersonalData))
                 ) && 
                 (
-                    this.RiskHighTreshold == input.RiskHighTreshold ||
-                    (this.RiskHighTreshold != null &&
-                    this.RiskHighTreshold.Equals(input.RiskHighTreshold))
+                    this.IdCard == input.IdCard ||
+                    (this.IdCard != null &&
+                    this.IdCard.Equals(input.IdCard))
                 );
         }
 
@@ -116,10 +116,10 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.RiskMediumTreshold != null)
-                    hashCode = hashCode * 59 + this.RiskMediumTreshold.GetHashCode();
-                if (this.RiskHighTreshold != null)
-                    hashCode = hashCode * 59 + this.RiskHighTreshold.GetHashCode();
+                if (this.PersonalData != null)
+                    hashCode = hashCode * 59 + this.PersonalData.GetHashCode();
+                if (this.IdCard != null)
+                    hashCode = hashCode * 59 + this.IdCard.GetHashCode();
                 return hashCode;
             }
         }

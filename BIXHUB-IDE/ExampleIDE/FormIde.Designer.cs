@@ -48,10 +48,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this._txtReturnUrl = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this._txtLastName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this._txtFirstName = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this._txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this._btnCreaSessione = new System.Windows.Forms.Button();
@@ -196,7 +192,7 @@
             this._txtLog.Multiline = true;
             this._txtLog.Name = "_txtLog";
             this._txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this._txtLog.Size = new System.Drawing.Size(790, 190);
+            this._txtLog.Size = new System.Drawing.Size(790, 229);
             this._txtLog.TabIndex = 7;
             // 
             // groupBox3
@@ -210,10 +206,6 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this._txtReturnUrl);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this._txtLastName);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this._txtFirstName);
-            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this._txtPhoneNumber);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this._btnCreaSessione);
@@ -221,7 +213,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Location = new System.Drawing.Point(12, 119);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(805, 157);
+            this.groupBox3.Size = new System.Drawing.Size(805, 128);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Creazione nuova identificazione";
@@ -231,7 +223,7 @@
             this._cbSendMail.AutoSize = true;
             this._cbSendMail.Checked = true;
             this._cbSendMail.CheckState = System.Windows.Forms.CheckState.Checked;
-            this._cbSendMail.Location = new System.Drawing.Point(599, 125);
+            this._cbSendMail.Location = new System.Drawing.Point(600, 99);
             this._cbSendMail.Name = "_cbSendMail";
             this._cbSendMail.Size = new System.Drawing.Size(71, 17);
             this._cbSendMail.TabIndex = 23;
@@ -240,7 +232,7 @@
             // 
             // _txtTaxCode
             // 
-            this._txtTaxCode.Location = new System.Drawing.Point(74, 70);
+            this._txtTaxCode.Location = new System.Drawing.Point(75, 44);
             this._txtTaxCode.Name = "_txtTaxCode";
             this._txtTaxCode.Size = new System.Drawing.Size(257, 20);
             this._txtTaxCode.TabIndex = 22;
@@ -248,7 +240,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 72);
+            this.label4.Location = new System.Drawing.Point(7, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 21;
@@ -256,7 +248,7 @@
             // 
             // _txtExternalID
             // 
-            this._txtExternalID.Location = new System.Drawing.Point(539, 95);
+            this._txtExternalID.Location = new System.Drawing.Point(540, 69);
             this._txtExternalID.Name = "_txtExternalID";
             this._txtExternalID.Size = new System.Drawing.Size(257, 20);
             this._txtExternalID.TabIndex = 20;
@@ -264,7 +256,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(447, 99);
+            this.label9.Location = new System.Drawing.Point(448, 73);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 13);
             this.label9.TabIndex = 19;
@@ -272,7 +264,7 @@
             // 
             // _txtReturnUrl
             // 
-            this._txtReturnUrl.Location = new System.Drawing.Point(75, 96);
+            this._txtReturnUrl.Location = new System.Drawing.Point(76, 70);
             this._txtReturnUrl.Name = "_txtReturnUrl";
             this._txtReturnUrl.Size = new System.Drawing.Size(257, 20);
             this._txtReturnUrl.TabIndex = 18;
@@ -280,43 +272,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 98);
+            this.label10.Location = new System.Drawing.Point(8, 72);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 13);
             this.label10.TabIndex = 17;
             this.label10.Text = "Return Url";
-            // 
-            // _txtLastName
-            // 
-            this._txtLastName.Location = new System.Drawing.Point(539, 43);
-            this._txtLastName.Name = "_txtLastName";
-            this._txtLastName.Size = new System.Drawing.Size(257, 20);
-            this._txtLastName.TabIndex = 16;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(447, 47);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "LastName";
-            // 
-            // _txtFirstName
-            // 
-            this._txtFirstName.Location = new System.Drawing.Point(75, 44);
-            this._txtFirstName.Name = "_txtFirstName";
-            this._txtFirstName.Size = new System.Drawing.Size(257, 20);
-            this._txtFirstName.TabIndex = 14;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "FirstName";
             // 
             // _txtPhoneNumber
             // 
@@ -336,7 +296,7 @@
             // 
             // _btnCreaSessione
             // 
-            this._btnCreaSessione.Location = new System.Drawing.Point(684, 120);
+            this._btnCreaSessione.Location = new System.Drawing.Point(685, 94);
             this._btnCreaSessione.Margin = new System.Windows.Forms.Padding(2);
             this._btnCreaSessione.Name = "_btnCreaSessione";
             this._btnCreaSessione.Size = new System.Drawing.Size(112, 25);
@@ -381,9 +341,9 @@
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this._txtSessionID);
             this.groupBox4.Controls.Add(this._btnGetSessionStatus);
-            this.groupBox4.Location = new System.Drawing.Point(12, 283);
+            this.groupBox4.Location = new System.Drawing.Point(12, 253);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(805, 78);
+            this.groupBox4.Size = new System.Drawing.Size(805, 69);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Lettura identificazioni";
@@ -433,10 +393,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(13, 367);
+            this.tabControl1.Location = new System.Drawing.Point(13, 328);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(804, 222);
+            this.tabControl1.Size = new System.Drawing.Size(804, 261);
             this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
@@ -445,7 +405,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(796, 196);
+            this.tabPage1.Size = new System.Drawing.Size(796, 235);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Log";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -519,10 +479,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox _txtReturnUrl;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox _txtLastName;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox _txtFirstName;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox _txtPhoneNumber;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;

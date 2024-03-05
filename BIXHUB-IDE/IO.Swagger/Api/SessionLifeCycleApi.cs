@@ -66,10 +66,10 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiV1SessionLifeCycleDeleteSessionGuidDeleteWithHttpInfo (Guid? sessionGuid);
         /// <summary>
-        /// Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session
         /// </summary>
         /// <remarks>
-        /// Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
@@ -78,16 +78,37 @@ namespace IO.Swagger.Api
         GetAcquiredIDInfoResponse ApiV1SessionLifeCycleGetAcquiredIDInfoSessionGuidPost (Guid? sessionGuid, GetAcquiredIDInfoRequest body = null);
 
         /// <summary>
-        /// Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session
         /// </summary>
         /// <remarks>
-        /// Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of GetAcquiredIDInfoResponse</returns>
         ApiResponse<GetAcquiredIDInfoResponse> ApiV1SessionLifeCycleGetAcquiredIDInfoSessionGuidPostWithHttpInfo (Guid? sessionGuid, GetAcquiredIDInfoRequest body = null);
+        /// <summary>
+        /// Returns acquired or verified informations of a prospect customer during the identification session
+        /// </summary>
+        /// <remarks>
+        /// Returns acquired or verified informations of a prospect customer during the identification session
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>GetAcquiredUserInfo</returns>
+        GetAcquiredUserInfo ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGet (Guid? sessionGuid);
+
+        /// <summary>
+        /// Returns acquired or verified informations of a prospect customer during the identification session
+        /// </summary>
+        /// <remarks>
+        /// Returns acquired or verified informations of a prospect customer during the identification session
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of GetAcquiredUserInfo</returns>
+        ApiResponse<GetAcquiredUserInfo> ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGetWithHttpInfo (Guid? sessionGuid);
         /// <summary>
         /// Returns a list of identification sessions
         /// </summary>
@@ -118,6 +139,27 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
         /// <returns>byte[]</returns>
+        byte[] ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGet (Guid? sessionGuid);
+
+        /// <summary>
+        /// Returns Audit Logs of an identification session
+        /// </summary>
+        /// <remarks>
+        /// Returns Audit Logs in pdf format
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGetWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// Returns Audit Logs of an identification session
+        /// </summary>
+        /// <remarks>
+        /// Returns Audit Logs in pdf format
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>byte[]</returns>
         byte[] ApiV1SessionLifeCycleGetAuditLogSessionGuidGet (Guid? sessionGuid);
 
         /// <summary>
@@ -130,6 +172,111 @@ namespace IO.Swagger.Api
         /// <param name="sessionGuid"></param>
         /// <returns>ApiResponse of byte[]</returns>
         ApiResponse<byte[]> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>DigitalIdentityResponse</returns>
+        DigitalIdentityResponse ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGet (Guid? sessionGuid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of DigitalIdentityResponse</returns>
+        ApiResponse<DigitalIdentityResponse> ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGetWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>byte[]</returns>
+        byte[] ApiV1SessionLifeCycleGetIdCardBackSessionGuidGet (Guid? sessionGuid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> ApiV1SessionLifeCycleGetIdCardBackSessionGuidGetWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>byte[]</returns>
+        byte[] ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGet (Guid? sessionGuid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGetWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>byte[]</returns>
+        byte[] ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGet (Guid? sessionGuid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGetWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>byte[]</returns>
+        byte[] ApiV1SessionLifeCycleGetSelfieSessionGuidGet (Guid? sessionGuid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> ApiV1SessionLifeCycleGetSelfieSessionGuidGetWithHttpInfo (Guid? sessionGuid);
         /// <summary>
         /// Returns info of an identification sessione
         /// </summary>
@@ -263,10 +410,10 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiV1SessionLifeCycleDeleteSessionGuidDeleteAsyncWithHttpInfo (Guid? sessionGuid);
         /// <summary>
-        /// Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session
         /// </summary>
         /// <remarks>
-        /// Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
@@ -275,16 +422,37 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<GetAcquiredIDInfoResponse> ApiV1SessionLifeCycleGetAcquiredIDInfoSessionGuidPostAsync (Guid? sessionGuid, GetAcquiredIDInfoRequest body = null);
 
         /// <summary>
-        /// Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session
         /// </summary>
         /// <remarks>
-        /// Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
         /// <param name="body"> (optional)</param>
         /// <returns>Task of ApiResponse (GetAcquiredIDInfoResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetAcquiredIDInfoResponse>> ApiV1SessionLifeCycleGetAcquiredIDInfoSessionGuidPostAsyncWithHttpInfo (Guid? sessionGuid, GetAcquiredIDInfoRequest body = null);
+        /// <summary>
+        /// Returns acquired or verified informations of a prospect customer during the identification session
+        /// </summary>
+        /// <remarks>
+        /// Returns acquired or verified informations of a prospect customer during the identification session
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of GetAcquiredUserInfo</returns>
+        System.Threading.Tasks.Task<GetAcquiredUserInfo> ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGetAsync (Guid? sessionGuid);
+
+        /// <summary>
+        /// Returns acquired or verified informations of a prospect customer during the identification session
+        /// </summary>
+        /// <remarks>
+        /// Returns acquired or verified informations of a prospect customer during the identification session
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (GetAcquiredUserInfo)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetAcquiredUserInfo>> ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid);
         /// <summary>
         /// Returns a list of identification sessions
         /// </summary>
@@ -315,6 +483,27 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
         /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGetAsync (Guid? sessionGuid);
+
+        /// <summary>
+        /// Returns Audit Logs of an identification session
+        /// </summary>
+        /// <remarks>
+        /// Returns Audit Logs in pdf format
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// Returns Audit Logs of an identification session
+        /// </summary>
+        /// <remarks>
+        /// Returns Audit Logs in pdf format
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of byte[]</returns>
         System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsync (Guid? sessionGuid);
 
         /// <summary>
@@ -327,6 +516,111 @@ namespace IO.Swagger.Api
         /// <param name="sessionGuid"></param>
         /// <returns>Task of ApiResponse (byte[])</returns>
         System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetAuditLogSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of DigitalIdentityResponse</returns>
+        System.Threading.Tasks.Task<DigitalIdentityResponse> ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGetAsync (Guid? sessionGuid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (DigitalIdentityResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DigitalIdentityResponse>> ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetIdCardBackSessionGuidGetAsync (Guid? sessionGuid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetIdCardBackSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGetAsync (Guid? sessionGuid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGetAsync (Guid? sessionGuid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetSelfieSessionGuidGetAsync (Guid? sessionGuid);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetSelfieSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid);
         /// <summary>
         /// Returns info of an identification sessione
         /// </summary>
@@ -821,7 +1115,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Returns acquired informations of a prospect customer during the identification session Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session Returns acquired or verified informations of a prospect customer during the identification session
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
@@ -834,7 +1128,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Returns acquired informations of a prospect customer during the identification session Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session Returns acquired or verified informations of a prospect customer during the identification session
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
@@ -903,7 +1197,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Returns acquired informations of a prospect customer during the identification session Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session Returns acquired or verified informations of a prospect customer during the identification session
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
@@ -917,7 +1211,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Returns acquired informations of a prospect customer during the identification session Returns acquired informations of a prospect customer during the identification session
+        /// Returns acquired or verified informations of a prospect customer during the identification session Returns acquired or verified informations of a prospect customer during the identification session
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
@@ -983,6 +1277,149 @@ namespace IO.Swagger.Api
             return new ApiResponse<GetAcquiredIDInfoResponse>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (GetAcquiredIDInfoResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAcquiredIDInfoResponse)));
+        }
+
+        /// <summary>
+        /// Returns acquired or verified informations of a prospect customer during the identification session Returns acquired or verified informations of a prospect customer during the identification session
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>GetAcquiredUserInfo</returns>
+        public GetAcquiredUserInfo ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGet (Guid? sessionGuid)
+        {
+             ApiResponse<GetAcquiredUserInfo> localVarResponse = ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGetWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns acquired or verified informations of a prospect customer during the identification session Returns acquired or verified informations of a prospect customer during the identification session
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of GetAcquiredUserInfo</returns>
+        public ApiResponse< GetAcquiredUserInfo > ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGetWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetAcquiredUserInfo/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GetAcquiredUserInfo>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (GetAcquiredUserInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAcquiredUserInfo)));
+        }
+
+        /// <summary>
+        /// Returns acquired or verified informations of a prospect customer during the identification session Returns acquired or verified informations of a prospect customer during the identification session
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of GetAcquiredUserInfo</returns>
+        public async System.Threading.Tasks.Task<GetAcquiredUserInfo> ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGetAsync (Guid? sessionGuid)
+        {
+             ApiResponse<GetAcquiredUserInfo> localVarResponse = await ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGetAsyncWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Returns acquired or verified informations of a prospect customer during the identification session Returns acquired or verified informations of a prospect customer during the identification session
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (GetAcquiredUserInfo)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GetAcquiredUserInfo>> ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetAcquiredUserInfo/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetAcquiredUserInfoSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GetAcquiredUserInfo>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (GetAcquiredUserInfo) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetAcquiredUserInfo)));
         }
 
         /// <summary>
@@ -1144,6 +1581,149 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sessionGuid"></param>
         /// <returns>byte[]</returns>
+        public byte[] ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGet (Guid? sessionGuid)
+        {
+             ApiResponse<byte[]> localVarResponse = ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGetWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns Audit Logs of an identification session Returns Audit Logs in pdf format
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGetWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetAuditLogBase64/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        /// Returns Audit Logs of an identification session Returns Audit Logs in pdf format
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGetAsync (Guid? sessionGuid)
+        {
+             ApiResponse<byte[]> localVarResponse = await ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGetAsyncWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Returns Audit Logs of an identification session Returns Audit Logs in pdf format
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetAuditLogBase64/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetAuditLogBase64SessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        /// Returns Audit Logs of an identification session Returns Audit Logs in pdf format
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>byte[]</returns>
         public byte[] ApiV1SessionLifeCycleGetAuditLogSessionGuidGet (Guid? sessionGuid)
         {
              ApiResponse<byte[]> localVarResponse = ApiV1SessionLifeCycleGetAuditLogSessionGuidGetWithHttpInfo(sessionGuid);
@@ -1273,6 +1853,721 @@ namespace IO.Swagger.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetAuditLogSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>DigitalIdentityResponse</returns>
+        public DigitalIdentityResponse ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGet (Guid? sessionGuid)
+        {
+             ApiResponse<DigitalIdentityResponse> localVarResponse = ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGetWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of DigitalIdentityResponse</returns>
+        public ApiResponse< DigitalIdentityResponse > ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGetWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetDigitalIdentityData/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DigitalIdentityResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (DigitalIdentityResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DigitalIdentityResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of DigitalIdentityResponse</returns>
+        public async System.Threading.Tasks.Task<DigitalIdentityResponse> ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGetAsync (Guid? sessionGuid)
+        {
+             ApiResponse<DigitalIdentityResponse> localVarResponse = await ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGetAsyncWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (DigitalIdentityResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DigitalIdentityResponse>> ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetDigitalIdentityData/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetDigitalIdentityDataSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DigitalIdentityResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (DigitalIdentityResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DigitalIdentityResponse)));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>byte[]</returns>
+        public byte[] ApiV1SessionLifeCycleGetIdCardBackSessionGuidGet (Guid? sessionGuid)
+        {
+             ApiResponse<byte[]> localVarResponse = ApiV1SessionLifeCycleGetIdCardBackSessionGuidGetWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > ApiV1SessionLifeCycleGetIdCardBackSessionGuidGetWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetIdCardBackSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetIdCardBack/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetIdCardBackSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetIdCardBackSessionGuidGetAsync (Guid? sessionGuid)
+        {
+             ApiResponse<byte[]> localVarResponse = await ApiV1SessionLifeCycleGetIdCardBackSessionGuidGetAsyncWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetIdCardBackSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetIdCardBackSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetIdCardBack/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetIdCardBackSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>byte[]</returns>
+        public byte[] ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGet (Guid? sessionGuid)
+        {
+             ApiResponse<byte[]> localVarResponse = ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGetWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGetWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetIdCardFront/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGetAsync (Guid? sessionGuid)
+        {
+             ApiResponse<byte[]> localVarResponse = await ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGetAsyncWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetIdCardFront/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetIdCardFrontSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>byte[]</returns>
+        public byte[] ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGet (Guid? sessionGuid)
+        {
+             ApiResponse<byte[]> localVarResponse = ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGetWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGetWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetLivenessDetection/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGetAsync (Guid? sessionGuid)
+        {
+             ApiResponse<byte[]> localVarResponse = await ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGetAsyncWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetLivenessDetection/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetLivenessDetectionSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>byte[]</returns>
+        public byte[] ApiV1SessionLifeCycleGetSelfieSessionGuidGet (Guid? sessionGuid)
+        {
+             ApiResponse<byte[]> localVarResponse = ApiV1SessionLifeCycleGetSelfieSessionGuidGetWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > ApiV1SessionLifeCycleGetSelfieSessionGuidGetWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetSelfieSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetSelfie/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetSelfieSessionGuidGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> ApiV1SessionLifeCycleGetSelfieSessionGuidGetAsync (Guid? sessionGuid)
+        {
+             ApiResponse<byte[]> localVarResponse = await ApiV1SessionLifeCycleGetSelfieSessionGuidGetAsyncWithHttpInfo(sessionGuid);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sessionGuid"></param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> ApiV1SessionLifeCycleGetSelfieSessionGuidGetAsyncWithHttpInfo (Guid? sessionGuid)
+        {
+            // verify the required parameter 'sessionGuid' is set
+            if (sessionGuid == null)
+                throw new ApiException(400, "Missing required parameter 'sessionGuid' when calling SessionLifeCycleApi->ApiV1SessionLifeCycleGetSelfieSessionGuidGet");
+
+            var localVarPath = "/api/v1/SessionLifeCycle/GetSelfie/{sessionGuid}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (sessionGuid != null) localVarPathParams.Add("sessionGuid", this.Configuration.ApiClient.ParameterToString(sessionGuid)); // path parameter
+            // authentication (Bearer) required
+            // bearer required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ApiV1SessionLifeCycleGetSelfieSessionGuidGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 

@@ -35,8 +35,6 @@ namespace ExampleIDE
                     _txtClientId.Text = settaggioIniziale.ClientId;
                     _txtClientSecret.Text = settaggioIniziale.ClientSecret;
                     _txtMail.Text = settaggioIniziale.Mail;
-                    _txtFirstName.Text = settaggioIniziale.FirstName;
-                    _txtLastName.Text = settaggioIniziale.LastName;
                     _txtTaxCode.Text = settaggioIniziale.TaxCode;
                     _txtPhoneNumber.Text = settaggioIniziale.PhoneNumber;
                     _txtReturnUrl.Text = settaggioIniziale.ReturnUrl;
@@ -68,7 +66,7 @@ namespace ExampleIDE
                 if (_caller == null)
                     throw new Exception("Fare login");
 
-                CreateSessionResponse createSessionResponse = _caller.CreateNewIdentificationSession(_txtMail.Text, _txtFirstName.Text, _txtLastName.Text, _txtTaxCode.Text, _txtPhoneNumber.Text, _txtReturnUrl.Text, _txtExternalID.Text, _cbSendMail.Checked);
+                CreateSessionResponse createSessionResponse = _caller.CreateNewIdentificationSession(_txtMail.Text, _txtTaxCode.Text, _txtPhoneNumber.Text, _txtReturnUrl.Text, _txtExternalID.Text, _cbSendMail.Checked);
                 AddLogInfo("Sessione creata con successo: " + createSessionResponse.SessionUrl);
             }
             catch (Exception ex)
@@ -91,8 +89,6 @@ namespace ExampleIDE
                     ClientId = _txtClientId.Text,
                     ClientSecret = _txtClientSecret.Text,
                     Mail = _txtMail.Text,
-                    FirstName = _txtFirstName.Text,
-                    LastName = _txtLastName.Text,
                     TaxCode = _txtTaxCode.Text,
                     PhoneNumber = _txtPhoneNumber.Text,
                     ReturnUrl = _txtReturnUrl.Text,
@@ -273,8 +269,6 @@ namespace ExampleIDE
         public string ClientSecret { get; set; }
 
         public string Mail { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
         public string TaxCode { get; set; }
         public string PhoneNumber { get; set; }
         public string ReturnUrl { get; set; }

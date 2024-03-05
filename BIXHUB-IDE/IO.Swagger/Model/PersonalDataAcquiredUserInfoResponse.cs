@@ -23,30 +23,36 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// PrimaryPersonalData
+    /// PersonalDataAcquiredUserInfoResponse
     /// </summary>
     [DataContract]
-        public partial class PrimaryPersonalData :  IEquatable<PrimaryPersonalData>, IValidatableObject
+        public partial class PersonalDataAcquiredUserInfoResponse :  IEquatable<PersonalDataAcquiredUserInfoResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PrimaryPersonalData" /> class.
+        /// Initializes a new instance of the <see cref="PersonalDataAcquiredUserInfoResponse" /> class.
         /// </summary>
         /// <param name="firstName">firstName.</param>
         /// <param name="lastName">lastName.</param>
+        /// <param name="nationality">nationality.</param>
         /// <param name="placeOfBirth">placeOfBirth.</param>
         /// <param name="dateOfBirth">dateOfBirth.</param>
+        /// <param name="taxCode">taxCode.</param>
         /// <param name="address">address.</param>
         /// <param name="phoneNumber">phoneNumber.</param>
+        /// <param name="phoneVerified">phoneVerified.</param>
         /// <param name="sex">sex.</param>
         /// <param name="email">email.</param>
-        public PrimaryPersonalData(string firstName = default(string), string lastName = default(string), string placeOfBirth = default(string), DateTime? dateOfBirth = default(DateTime?), string address = default(string), string phoneNumber = default(string), Sex sex = default(Sex), string email = default(string))
+        public PersonalDataAcquiredUserInfoResponse(string firstName = default(string), string lastName = default(string), string nationality = default(string), string placeOfBirth = default(string), DateTime? dateOfBirth = default(DateTime?), string taxCode = default(string), string address = default(string), string phoneNumber = default(string), bool? phoneVerified = default(bool?), Sex sex = default(Sex), string email = default(string))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
+            this.Nationality = nationality;
             this.PlaceOfBirth = placeOfBirth;
             this.DateOfBirth = dateOfBirth;
+            this.TaxCode = taxCode;
             this.Address = address;
             this.PhoneNumber = phoneNumber;
+            this.PhoneVerified = phoneVerified;
             this.Sex = sex;
             this.Email = email;
         }
@@ -64,6 +70,12 @@ namespace IO.Swagger.Model
         public string LastName { get; set; }
 
         /// <summary>
+        /// Gets or Sets Nationality
+        /// </summary>
+        [DataMember(Name="nationality", EmitDefaultValue=false)]
+        public string Nationality { get; set; }
+
+        /// <summary>
         /// Gets or Sets PlaceOfBirth
         /// </summary>
         [DataMember(Name="placeOfBirth", EmitDefaultValue=false)]
@@ -76,6 +88,12 @@ namespace IO.Swagger.Model
         public DateTime? DateOfBirth { get; set; }
 
         /// <summary>
+        /// Gets or Sets TaxCode
+        /// </summary>
+        [DataMember(Name="taxCode", EmitDefaultValue=false)]
+        public string TaxCode { get; set; }
+
+        /// <summary>
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name="address", EmitDefaultValue=false)]
@@ -86,6 +104,12 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PhoneVerified
+        /// </summary>
+        [DataMember(Name="phoneVerified", EmitDefaultValue=false)]
+        public bool? PhoneVerified { get; set; }
 
         /// <summary>
         /// Gets or Sets Sex
@@ -106,13 +130,16 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class PrimaryPersonalData {\n");
+            sb.Append("class PersonalDataAcquiredUserInfoResponse {\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
+            sb.Append("  Nationality: ").Append(Nationality).Append("\n");
             sb.Append("  PlaceOfBirth: ").Append(PlaceOfBirth).Append("\n");
             sb.Append("  DateOfBirth: ").Append(DateOfBirth).Append("\n");
+            sb.Append("  TaxCode: ").Append(TaxCode).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
+            sb.Append("  PhoneVerified: ").Append(PhoneVerified).Append("\n");
             sb.Append("  Sex: ").Append(Sex).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("}\n");
@@ -135,15 +162,15 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PrimaryPersonalData);
+            return this.Equals(input as PersonalDataAcquiredUserInfoResponse);
         }
 
         /// <summary>
-        /// Returns true if PrimaryPersonalData instances are equal
+        /// Returns true if PersonalDataAcquiredUserInfoResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of PrimaryPersonalData to be compared</param>
+        /// <param name="input">Instance of PersonalDataAcquiredUserInfoResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PrimaryPersonalData input)
+        public bool Equals(PersonalDataAcquiredUserInfoResponse input)
         {
             if (input == null)
                 return false;
@@ -160,6 +187,11 @@ namespace IO.Swagger.Model
                     this.LastName.Equals(input.LastName))
                 ) && 
                 (
+                    this.Nationality == input.Nationality ||
+                    (this.Nationality != null &&
+                    this.Nationality.Equals(input.Nationality))
+                ) && 
+                (
                     this.PlaceOfBirth == input.PlaceOfBirth ||
                     (this.PlaceOfBirth != null &&
                     this.PlaceOfBirth.Equals(input.PlaceOfBirth))
@@ -170,6 +202,11 @@ namespace IO.Swagger.Model
                     this.DateOfBirth.Equals(input.DateOfBirth))
                 ) && 
                 (
+                    this.TaxCode == input.TaxCode ||
+                    (this.TaxCode != null &&
+                    this.TaxCode.Equals(input.TaxCode))
+                ) && 
+                (
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
@@ -178,6 +215,11 @@ namespace IO.Swagger.Model
                     this.PhoneNumber == input.PhoneNumber ||
                     (this.PhoneNumber != null &&
                     this.PhoneNumber.Equals(input.PhoneNumber))
+                ) && 
+                (
+                    this.PhoneVerified == input.PhoneVerified ||
+                    (this.PhoneVerified != null &&
+                    this.PhoneVerified.Equals(input.PhoneVerified))
                 ) && 
                 (
                     this.Sex == input.Sex ||
@@ -204,14 +246,20 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.FirstName.GetHashCode();
                 if (this.LastName != null)
                     hashCode = hashCode * 59 + this.LastName.GetHashCode();
+                if (this.Nationality != null)
+                    hashCode = hashCode * 59 + this.Nationality.GetHashCode();
                 if (this.PlaceOfBirth != null)
                     hashCode = hashCode * 59 + this.PlaceOfBirth.GetHashCode();
                 if (this.DateOfBirth != null)
                     hashCode = hashCode * 59 + this.DateOfBirth.GetHashCode();
+                if (this.TaxCode != null)
+                    hashCode = hashCode * 59 + this.TaxCode.GetHashCode();
                 if (this.Address != null)
                     hashCode = hashCode * 59 + this.Address.GetHashCode();
                 if (this.PhoneNumber != null)
                     hashCode = hashCode * 59 + this.PhoneNumber.GetHashCode();
+                if (this.PhoneVerified != null)
+                    hashCode = hashCode * 59 + this.PhoneVerified.GetHashCode();
                 if (this.Sex != null)
                     hashCode = hashCode * 59 + this.Sex.GetHashCode();
                 if (this.Email != null)

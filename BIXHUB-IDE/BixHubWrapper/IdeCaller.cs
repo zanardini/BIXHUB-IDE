@@ -57,7 +57,7 @@ namespace BixHubWrapper
             _accessToken = accessTokenDto.access_token;
         }
 
-        public BixHubWrapper.Model.CreateSessionResponse CreateNewIdentificationSession(string email, string firstName, string lastName, string taxCode, string phoneNumber, string returnUrl, string externalID, bool sendMail)
+        public BixHubWrapper.Model.CreateSessionResponse CreateNewIdentificationSession(string email, string taxCode, string phoneNumber, string returnUrl, string externalID, bool sendMail)
         {
             /*
                 "attributes": { 
@@ -68,13 +68,7 @@ namespace BixHubWrapper
                  },
             */
 
-            var personalData = new IO.Swagger.Model.PrimaryPersonalData
-            {
-                Email = email,
-                FirstName = firstName,
-                LastName = lastName,
-                PhoneNumber = phoneNumber,
-            };
+            var personalData = new IO.Swagger.Model.DeclaredPersonalData(taxCode, phoneNumber, email);
             var attributes = new Dictionary<string, string> { };
             var parameters = new Dictionary<string, string> {
                 { "returnUrl", returnUrl },
@@ -83,7 +77,7 @@ namespace BixHubWrapper
             var metadata = new Dictionary<string, string> { { "externalID", externalID } };
 
             IO.Swagger.Api.SessionLifeCycleApi sessionLifeCycleApi = new IO.Swagger.Api.SessionLifeCycleApi(Configuration);
-            IO.Swagger.Model.CreateSessionRequest body = new IO.Swagger.Model.CreateSessionRequest(parameters, metadata, attributes, taxCode, personalData, IO.Swagger.Model.SessionFlowTypeDto.Ai);
+            IO.Swagger.Model.CreateSessionRequest body = new IO.Swagger.Model.CreateSessionRequest(parameters, metadata, attributes, personalData, IO.Swagger.Model.SessionFlowTypeDto.Ai);
             var response = sessionLifeCycleApi.ApiV1SessionLifeCycleCreatePost(body);
             if (sendMail)
                 sessionLifeCycleApi.ApiV1SessionLifeCycleSendEmailSessionGuidPost(response.SessionGuid, new SendEmailRequest());

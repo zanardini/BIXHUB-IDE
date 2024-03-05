@@ -34,16 +34,14 @@ namespace IO.Swagger.Model
         /// <param name="parameters">parameters.</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="attributes">attributes.</param>
-        /// <param name="taxCode">taxCode.</param>
-        /// <param name="personalData">personalData.</param>
+        /// <param name="declaredPersonalData">declaredPersonalData.</param>
         /// <param name="flowType">flowType.</param>
-        public CreateSessionRequest(Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> metadata = default(Dictionary<string, string>), Dictionary<string, string> attributes = default(Dictionary<string, string>), string taxCode = default(string), PrimaryPersonalData personalData = default(PrimaryPersonalData), SessionFlowTypeDto flowType = default(SessionFlowTypeDto))
+        public CreateSessionRequest(Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> metadata = default(Dictionary<string, string>), Dictionary<string, string> attributes = default(Dictionary<string, string>), DeclaredPersonalData declaredPersonalData = default(DeclaredPersonalData), SessionFlowTypeDto flowType = default(SessionFlowTypeDto))
         {
             this.Parameters = parameters;
             this.Metadata = metadata;
             this.Attributes = attributes;
-            this.TaxCode = taxCode;
-            this.PersonalData = personalData;
+            this.DeclaredPersonalData = declaredPersonalData;
             this.FlowType = flowType;
         }
         
@@ -66,16 +64,10 @@ namespace IO.Swagger.Model
         public Dictionary<string, string> Attributes { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaxCode
+        /// Gets or Sets DeclaredPersonalData
         /// </summary>
-        [DataMember(Name="taxCode", EmitDefaultValue=false)]
-        public string TaxCode { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PersonalData
-        /// </summary>
-        [DataMember(Name="personalData", EmitDefaultValue=false)]
-        public PrimaryPersonalData PersonalData { get; set; }
+        [DataMember(Name="declaredPersonalData", EmitDefaultValue=false)]
+        public DeclaredPersonalData DeclaredPersonalData { get; set; }
 
         /// <summary>
         /// Gets or Sets FlowType
@@ -94,8 +86,7 @@ namespace IO.Swagger.Model
             sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
-            sb.Append("  TaxCode: ").Append(TaxCode).Append("\n");
-            sb.Append("  PersonalData: ").Append(PersonalData).Append("\n");
+            sb.Append("  DeclaredPersonalData: ").Append(DeclaredPersonalData).Append("\n");
             sb.Append("  FlowType: ").Append(FlowType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -150,14 +141,9 @@ namespace IO.Swagger.Model
                     this.Attributes.SequenceEqual(input.Attributes)
                 ) && 
                 (
-                    this.TaxCode == input.TaxCode ||
-                    (this.TaxCode != null &&
-                    this.TaxCode.Equals(input.TaxCode))
-                ) && 
-                (
-                    this.PersonalData == input.PersonalData ||
-                    (this.PersonalData != null &&
-                    this.PersonalData.Equals(input.PersonalData))
+                    this.DeclaredPersonalData == input.DeclaredPersonalData ||
+                    (this.DeclaredPersonalData != null &&
+                    this.DeclaredPersonalData.Equals(input.DeclaredPersonalData))
                 ) && 
                 (
                     this.FlowType == input.FlowType ||
@@ -181,10 +167,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 if (this.Attributes != null)
                     hashCode = hashCode * 59 + this.Attributes.GetHashCode();
-                if (this.TaxCode != null)
-                    hashCode = hashCode * 59 + this.TaxCode.GetHashCode();
-                if (this.PersonalData != null)
-                    hashCode = hashCode * 59 + this.PersonalData.GetHashCode();
+                if (this.DeclaredPersonalData != null)
+                    hashCode = hashCode * 59 + this.DeclaredPersonalData.GetHashCode();
                 if (this.FlowType != null)
                     hashCode = hashCode * 59 + this.FlowType.GetHashCode();
                 return hashCode;

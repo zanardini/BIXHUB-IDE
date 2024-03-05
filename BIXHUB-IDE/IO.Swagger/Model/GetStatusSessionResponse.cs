@@ -41,9 +41,7 @@ namespace IO.Swagger.Model
         /// <param name="completedDate">completedDate.</param>
         /// <param name="verifyDate">verifyDate.</param>
         /// <param name="sessionStatus">sessionStatus.</param>
-        /// <param name="parameters">parameters.</param>
-        /// <param name="taxCode">taxCode.</param>
-        public GetStatusSessionResponse(Guid? sessionGuid = default(Guid?), SessionFlowTypeDto flowType = default(SessionFlowTypeDto), IdentificationStatus identificationStatus = default(IdentificationStatus), float? riskScore = default(float?), string riskScoreEvaluation = default(string), List<FlowStep> flow = default(List<FlowStep>), DateTime? createdDate = default(DateTime?), DateTime? completedDate = default(DateTime?), DateTime? verifyDate = default(DateTime?), SessionStatus sessionStatus = default(SessionStatus), Dictionary<string, string> parameters = default(Dictionary<string, string>), string taxCode = default(string))
+        public GetStatusSessionResponse(Guid? sessionGuid = default(Guid?), SessionFlowTypeDto flowType = default(SessionFlowTypeDto), IdentificationStatus identificationStatus = default(IdentificationStatus), float? riskScore = default(float?), string riskScoreEvaluation = default(string), List<FlowStep> flow = default(List<FlowStep>), DateTime? createdDate = default(DateTime?), DateTime? completedDate = default(DateTime?), DateTime? verifyDate = default(DateTime?), SessionStatus sessionStatus = default(SessionStatus))
         {
             this.SessionGuid = sessionGuid;
             this.FlowType = flowType;
@@ -55,8 +53,6 @@ namespace IO.Swagger.Model
             this.CompletedDate = completedDate;
             this.VerifyDate = verifyDate;
             this.SessionStatus = sessionStatus;
-            this.Parameters = parameters;
-            this.TaxCode = taxCode;
         }
         
         /// <summary>
@@ -120,18 +116,6 @@ namespace IO.Swagger.Model
         public SessionStatus SessionStatus { get; set; }
 
         /// <summary>
-        /// Gets or Sets Parameters
-        /// </summary>
-        [DataMember(Name="parameters", EmitDefaultValue=false)]
-        public Dictionary<string, string> Parameters { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TaxCode
-        /// </summary>
-        [DataMember(Name="taxCode", EmitDefaultValue=false)]
-        public string TaxCode { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -149,8 +133,6 @@ namespace IO.Swagger.Model
             sb.Append("  CompletedDate: ").Append(CompletedDate).Append("\n");
             sb.Append("  VerifyDate: ").Append(VerifyDate).Append("\n");
             sb.Append("  SessionStatus: ").Append(SessionStatus).Append("\n");
-            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
-            sb.Append("  TaxCode: ").Append(TaxCode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -235,17 +217,6 @@ namespace IO.Swagger.Model
                     this.SessionStatus == input.SessionStatus ||
                     (this.SessionStatus != null &&
                     this.SessionStatus.Equals(input.SessionStatus))
-                ) && 
-                (
-                    this.Parameters == input.Parameters ||
-                    this.Parameters != null &&
-                    input.Parameters != null &&
-                    this.Parameters.SequenceEqual(input.Parameters)
-                ) && 
-                (
-                    this.TaxCode == input.TaxCode ||
-                    (this.TaxCode != null &&
-                    this.TaxCode.Equals(input.TaxCode))
                 );
         }
 
@@ -278,10 +249,6 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.VerifyDate.GetHashCode();
                 if (this.SessionStatus != null)
                     hashCode = hashCode * 59 + this.SessionStatus.GetHashCode();
-                if (this.Parameters != null)
-                    hashCode = hashCode * 59 + this.Parameters.GetHashCode();
-                if (this.TaxCode != null)
-                    hashCode = hashCode * 59 + this.TaxCode.GetHashCode();
                 return hashCode;
             }
         }

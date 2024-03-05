@@ -37,7 +37,8 @@ namespace IO.Swagger.Model
         /// <param name="metadata">metadata.</param>
         /// <param name="createdDate">createdDate.</param>
         /// <param name="updatedDate">updatedDate.</param>
-        public GetSessionResponse(Guid? sessionGuid = default(Guid?), Dictionary<string, string> attributes = default(Dictionary<string, string>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> metadata = default(Dictionary<string, string>), DateTime? createdDate = default(DateTime?), DateTime? updatedDate = default(DateTime?))
+        /// <param name="declaredPersonalData">declaredPersonalData.</param>
+        public GetSessionResponse(Guid? sessionGuid = default(Guid?), Dictionary<string, string> attributes = default(Dictionary<string, string>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> metadata = default(Dictionary<string, string>), DateTime? createdDate = default(DateTime?), DateTime? updatedDate = default(DateTime?), DeclaredPersonalData declaredPersonalData = default(DeclaredPersonalData))
         {
             this.SessionGuid = sessionGuid;
             this.Attributes = attributes;
@@ -45,6 +46,7 @@ namespace IO.Swagger.Model
             this.Metadata = metadata;
             this.CreatedDate = createdDate;
             this.UpdatedDate = updatedDate;
+            this.DeclaredPersonalData = declaredPersonalData;
         }
         
         /// <summary>
@@ -84,6 +86,12 @@ namespace IO.Swagger.Model
         public DateTime? UpdatedDate { get; set; }
 
         /// <summary>
+        /// Gets or Sets DeclaredPersonalData
+        /// </summary>
+        [DataMember(Name="declaredPersonalData", EmitDefaultValue=false)]
+        public DeclaredPersonalData DeclaredPersonalData { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -97,6 +105,7 @@ namespace IO.Swagger.Model
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  UpdatedDate: ").Append(UpdatedDate).Append("\n");
+            sb.Append("  DeclaredPersonalData: ").Append(DeclaredPersonalData).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,6 +172,11 @@ namespace IO.Swagger.Model
                     this.UpdatedDate == input.UpdatedDate ||
                     (this.UpdatedDate != null &&
                     this.UpdatedDate.Equals(input.UpdatedDate))
+                ) && 
+                (
+                    this.DeclaredPersonalData == input.DeclaredPersonalData ||
+                    (this.DeclaredPersonalData != null &&
+                    this.DeclaredPersonalData.Equals(input.DeclaredPersonalData))
                 );
         }
 
@@ -187,6 +201,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
                 if (this.UpdatedDate != null)
                     hashCode = hashCode * 59 + this.UpdatedDate.GetHashCode();
+                if (this.DeclaredPersonalData != null)
+                    hashCode = hashCode * 59 + this.DeclaredPersonalData.GetHashCode();
                 return hashCode;
             }
         }
