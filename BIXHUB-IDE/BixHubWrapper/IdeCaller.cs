@@ -59,25 +59,24 @@ namespace BixHubWrapper
 
         public BixHubWrapper.Model.CreateSessionResponse CreateNewIdentificationSession(string email, string taxCode, string phoneNumber, string returnUrl, string externalID, bool sendMail)
         {
-            /*
-                "attributes": { 
-                    "flow.idCard.algorithm": "2",
-                    "flow.idCard.notExpireWithinMonths": "1",
-                    "otp.expireInSeconds": "120",
-                    "otp.message": "Il tuo OTP è: "
-                 },
-            */
-
-            var personalData = new IO.Swagger.Model.DeclaredPersonalData(taxCode, phoneNumber, email);
-            var attributes = new Dictionary<string, string> { };
+            // declaredPersonalData contiene i dati dell'identificato che l'applicazione terza dichiara
+            var declaredPersonalData = new IO.Swagger.Model.DeclaredPersonalData(taxCode, phoneNumber, email);
+            
+            var attributes = new Dictionary<string, string> { 
+            };
+            // parameters sono i parametri di funzionamento del servizio quali la lingua utente nonchè la URL di redirect a fine sessione
             var parameters = new Dictionary<string, string> {
                 { "returnUrl", returnUrl },
                 { "language", "it" }
             };
-            var metadata = new Dictionary<string, string> { { "externalID", externalID } };
+            // è possibile indicare metadati da salvare lato BIX-IDE per poi favorire il match
+            var metadata = new Dictionary<string, string> { 
+                { "externalID", externalID } 
+            };
 
+            var sessionFlowType = IO.Swagger.Model.SessionFlowTypeDto.Dynamic;
             IO.Swagger.Api.SessionLifeCycleApi sessionLifeCycleApi = new IO.Swagger.Api.SessionLifeCycleApi(Configuration);
-            IO.Swagger.Model.CreateSessionRequest body = new IO.Swagger.Model.CreateSessionRequest(parameters, metadata, attributes, personalData, IO.Swagger.Model.SessionFlowTypeDto.Ai);
+            IO.Swagger.Model.CreateSessionRequest body = new IO.Swagger.Model.CreateSessionRequest(parameters, metadata, attributes, declaredPersonalData, sessionFlowType);
             var response = sessionLifeCycleApi.ApiV1SessionLifeCycleCreatePost(body);
             if (sendMail)
                 sessionLifeCycleApi.ApiV1SessionLifeCycleSendEmailSessionGuidPost(response.SessionGuid, new SendEmailRequest());
