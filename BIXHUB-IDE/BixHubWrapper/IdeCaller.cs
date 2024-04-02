@@ -11,13 +11,15 @@ namespace BixHubWrapper
 {
     public class IdeCaller
     {
-        private readonly string _url;
+        private readonly string _authUrl;
+        private readonly string _ideUrl;
         public string AccessToken { get { return _accessToken; } }
         private string _accessToken;
 
-        public IdeCaller(string url)
+        public IdeCaller(string authUrl, string ideUrl)
         {
-            _url = url;
+            _authUrl = authUrl;
+            _ideUrl = ideUrl;
         }
 
         public IO.Swagger.Client.Configuration Configuration
@@ -28,7 +30,7 @@ namespace BixHubWrapper
                     return new IO.Swagger.Client.Configuration()
                     {
                         AccessToken = _accessToken,
-                        BasePath = _url + "/OnBoardingService",
+                        BasePath = _ideUrl + "/OnBoardingService",
                         ApiKey = new Dictionary<string, string>() { { "Authorization", _accessToken } },
                         ApiKeyPrefix = new Dictionary<string, string>() { { "Authorization", "Bearer" } }
                     };
@@ -47,7 +49,7 @@ namespace BixHubWrapper
             };
             StringContent content = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
 
-            var task = Task.Run(() => client.PostAsync($"{_url}/AuthorizationService/api/{clientGuid}/oauth/Token", content));
+            var task = Task.Run(() => client.PostAsync($"{_authUrl}/AuthorizationService/api/{clientGuid}/oauth/Token", content));
             task.Wait();
             var response = task.Result;
 

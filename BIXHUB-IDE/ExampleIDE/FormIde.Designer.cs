@@ -33,7 +33,7 @@
             this._btnSaveSettings = new System.Windows.Forms.Button();
             this._txtClientGuid = new System.Windows.Forms.TextBox();
             this._btnLogin = new System.Windows.Forms.Button();
-            this._txtUrl = new System.Windows.Forms.TextBox();
+            this._txtAuthUrl = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this._txtClientSecret = new System.Windows.Forms.TextBox();
@@ -63,6 +63,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.sessionData = new System.Windows.Forms.DataGridView();
+            this._txtIdeUrl = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -76,11 +78,13 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this._txtIdeUrl);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this._btnSaveSettings);
             this.groupBox1.Controls.Add(this._txtClientGuid);
             this.groupBox1.Controls.Add(this._btnLogin);
-            this.groupBox1.Controls.Add(this._txtUrl);
+            this.groupBox1.Controls.Add(this._txtAuthUrl);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this._txtClientSecret);
@@ -109,7 +113,7 @@
             this._btnSaveSettings.Margin = new System.Windows.Forms.Padding(2);
             this._btnSaveSettings.Name = "_btnSaveSettings";
             this._btnSaveSettings.Size = new System.Drawing.Size(106, 25);
-            this._btnSaveSettings.TabIndex = 11;
+            this._btnSaveSettings.TabIndex = 7;
             this._btnSaveSettings.Text = "Salva dati usati";
             this._btnSaveSettings.UseVisualStyleBackColor = true;
             this._btnSaveSettings.Click += new System.EventHandler(this._btnSaveSettings_Click);
@@ -119,7 +123,7 @@
             this._txtClientGuid.Location = new System.Drawing.Point(75, 44);
             this._txtClientGuid.Name = "_txtClientGuid";
             this._txtClientGuid.Size = new System.Drawing.Size(480, 20);
-            this._txtClientGuid.TabIndex = 11;
+            this._txtClientGuid.TabIndex = 3;
             // 
             // _btnLogin
             // 
@@ -127,17 +131,17 @@
             this._btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this._btnLogin.Name = "_btnLogin";
             this._btnLogin.Size = new System.Drawing.Size(105, 25);
-            this._btnLogin.TabIndex = 10;
+            this._btnLogin.TabIndex = 6;
             this._btnLogin.Text = "Login";
             this._btnLogin.UseVisualStyleBackColor = true;
             this._btnLogin.Click += new System.EventHandler(this._btnLogin_Click);
             // 
-            // _txtUrl
+            // _txtAuthUrl
             // 
-            this._txtUrl.Location = new System.Drawing.Point(75, 18);
-            this._txtUrl.Name = "_txtUrl";
-            this._txtUrl.Size = new System.Drawing.Size(480, 20);
-            this._txtUrl.TabIndex = 1;
+            this._txtAuthUrl.Location = new System.Drawing.Point(75, 18);
+            this._txtAuthUrl.Name = "_txtAuthUrl";
+            this._txtAuthUrl.Size = new System.Drawing.Size(258, 20);
+            this._txtAuthUrl.TabIndex = 1;
             // 
             // label3
             // 
@@ -163,23 +167,23 @@
             this._txtClientSecret.Name = "_txtClientSecret";
             this._txtClientSecret.PasswordChar = '*';
             this._txtClientSecret.Size = new System.Drawing.Size(223, 20);
-            this._txtClientSecret.TabIndex = 4;
+            this._txtClientSecret.TabIndex = 5;
             // 
             // _txtClientId
             // 
             this._txtClientId.Location = new System.Drawing.Point(74, 70);
             this._txtClientId.Name = "_txtClientId";
             this._txtClientId.Size = new System.Drawing.Size(159, 20);
-            this._txtClientId.TabIndex = 3;
+            this._txtClientId.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Url Web Api";
+            this.label1.Text = "Auth Web Api";
             // 
             // _txtLog
             // 
@@ -416,7 +420,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(796, 196);
+            this.tabPage2.Size = new System.Drawing.Size(796, 235);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sessioni";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -427,9 +431,25 @@
             this.sessionData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sessionData.Location = new System.Drawing.Point(3, 3);
             this.sessionData.Name = "sessionData";
-            this.sessionData.Size = new System.Drawing.Size(790, 190);
+            this.sessionData.Size = new System.Drawing.Size(790, 229);
             this.sessionData.TabIndex = 0;
             this.sessionData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sessionData_CellContentClick);
+            // 
+            // _txtIdeUrl
+            // 
+            this._txtIdeUrl.Location = new System.Drawing.Point(413, 20);
+            this._txtIdeUrl.Name = "_txtIdeUrl";
+            this._txtIdeUrl.Size = new System.Drawing.Size(258, 20);
+            this._txtIdeUrl.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(345, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Ide Web Api";
             // 
             // FormIde
             // 
@@ -463,7 +483,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button _btnLogin;
-        private System.Windows.Forms.TextBox _txtUrl;
+        private System.Windows.Forms.TextBox _txtAuthUrl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox _txtClientSecret;
@@ -496,6 +516,8 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView sessionData;
+        private System.Windows.Forms.TextBox _txtIdeUrl;
+        private System.Windows.Forms.Label label7;
     }
 }
 

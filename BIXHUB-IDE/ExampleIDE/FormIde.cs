@@ -30,7 +30,8 @@ namespace ExampleIDE
                 using (TextReader reader = new StringReader(System.IO.File.ReadAllText(@"c:\temp\BixHub\BixHub.txt")))
                 {
                     var settaggioIniziale = (SettaggioIniziale)new XmlSerializer(typeof(SettaggioIniziale)).Deserialize(reader);
-                    _txtUrl.Text = settaggioIniziale.Url;
+                    _txtAuthUrl.Text = settaggioIniziale.AuthUrl;
+                    _txtIdeUrl.Text = settaggioIniziale.IdeUrl;
                     _txtClientGuid.Text = settaggioIniziale.ClientGuid;
                     _txtClientId.Text = settaggioIniziale.ClientId;
                     _txtClientSecret.Text = settaggioIniziale.ClientSecret;
@@ -47,7 +48,7 @@ namespace ExampleIDE
         {
             try
             {
-                _caller = new BixHubWrapper.IdeCaller(_txtUrl.Text);
+                _caller = new BixHubWrapper.IdeCaller(_txtAuthUrl.Text, _txtIdeUrl.Text);
 
                 _caller.Login(_txtClientGuid.Text, _txtClientId.Text, _txtClientSecret.Text);
                 AddLogInfo("Login avvenuta con successo: " + _caller.AccessToken);
@@ -84,7 +85,8 @@ namespace ExampleIDE
 
                 var settaggioIniziale = new SettaggioIniziale
                 {
-                    Url = _txtUrl.Text,
+                    AuthUrl = _txtAuthUrl.Text,
+                    IdeUrl = _txtIdeUrl.Text,                    
                     ClientGuid = _txtClientGuid.Text,
                     ClientId = _txtClientId.Text,
                     ClientSecret = _txtClientSecret.Text,
@@ -263,7 +265,8 @@ namespace ExampleIDE
     [Serializable()]
     public class SettaggioIniziale
     {
-        public string Url { get; set; }
+        public string AuthUrl { get; set; }
+        public string IdeUrl { get; set; }
         public string ClientGuid { get; set; }
         public string ClientId { get; set; }
         public string ClientSecret { get; set; }
